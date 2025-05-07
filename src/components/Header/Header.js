@@ -32,20 +32,55 @@ const Header = () => {
           <div className="logo">
             <Link to="/">Abdullah Habberrih</Link>
           </div>
-          <div className={`mobile-menu-toggle ${isMenuOpen ? 'active' : ''}`} onClick={toggleMenu}>
+          <div
+            className={`mobile-menu-toggle ${isMenuOpen ? 'active' : ''}`}
+            onClick={toggleMenu}
+          >
             <span></span>
             <span></span>
             <span></span>
           </div>
           <nav className={`nav-menu ${isMenuOpen ? 'active' : ''}`}>
             <ul>
-              <li><a href="#home" onClick={() => setIsMenuOpen(false)}>Home</a></li>
-              <li><a href="#about" onClick={() => setIsMenuOpen(false)}>About</a></li>
-              <li><a href="#portfolio" onClick={() => setIsMenuOpen(false)}>Portfolio</a></li>
-              <li><a href="#services" onClick={() => setIsMenuOpen(false)}>Services</a></li>
-              <li><a href="#news" onClick={() => setIsMenuOpen(false)}>News</a></li>
-              <li><a href="#contact" onClick={() => setIsMenuOpen(false)}>Contact</a></li>
-              <li><a href="/files/Abdullah_Habberrih_CV.pdf" className="cv-button" download="Abdullah_Habberrih_CV.pdf">Download CV</a></li>
+              <li>
+                <a href="#home" onClick={() => setIsMenuOpen(false)}>
+                  Home
+                </a>
+              </li>
+              <li>
+                <a href="#about" onClick={() => setIsMenuOpen(false)}>
+                  About
+                </a>
+              </li>
+              <li>
+                <a href="#portfolio" onClick={() => setIsMenuOpen(false)}>
+                  Portfolio
+                </a>
+              </li>
+              <li>
+                <a href="#services" onClick={() => setIsMenuOpen(false)}>
+                  Services
+                </a>
+              </li>
+              <li>
+                <a href="#news" onClick={() => setIsMenuOpen(false)}>
+                  News
+                </a>
+              </li>
+              <li>
+                <a href="#contact" onClick={() => setIsMenuOpen(false)}>
+                  Contact
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/files/habberrih-resume.pdf"
+                  className="cv-button"
+                  download="habberrih-resume.pdf"
+                >
+                  Download CV
+                </a>
+              </li>
             </ul>
           </nav>
         </div>
