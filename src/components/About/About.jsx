@@ -7,6 +7,20 @@ import './About.css';
 const About = () => {
   const { scrollYProgress } = useScroll();
   const scale = useTransform(scrollYProgress, [0, 1], [0.8, 1.2]);
+
+  const stats = [
+    { number: '3+', text: 'Years of Experience' },
+    { number: '5+', text: 'Research Publications' },
+    { number: '4', text: 'Awards & Recognitions' }
+  ];
+
+  const skills = [
+    { name: 'NestJS / Node.js / Express', percentage: 95 },
+    { name: 'JavaScript / TypeScript', percentage: 90 },
+    { name: 'Python / Machine Learning', percentage: 85 },
+    { name: 'Docker / Jenkins / Terraform', percentage: 80 }
+  ];
+
   return (
     <section id="about" className="about">
       <div className="container">
@@ -35,7 +49,6 @@ const About = () => {
             transition={{ duration: 0.8 }}
           >
             <div className="about-image-container">
-              {/* Replace with your actual image */}
               <motion.div 
                 className="about-image-placeholder"
                 whileHover={{ 
@@ -70,43 +83,8 @@ const About = () => {
               of Arabic dialects, with multiple published papers in international conferences and journals.
             </p>
             
-            <div className="about-info">
-              {[
-                { label: 'Name:', value: 'Abdullah Habberrih' },
-                { label: 'Email:', value: 'a.habberreh@gmail.com' },
-                { label: 'Phone:', value: '+218 643 65 26' },
-                { label: 'Location:', value: 'Rome, Italy' }
-              ].map((item, index) => (
-                <motion.div 
-                  className="info-item" 
-                  key={index}
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.2 * index, duration: 0.5 }}
-                  whileHover={{ x: 5, color: '#007bff' }}
-                >
-                  <motion.h4 
-                    whileHover={{ scale: 1.05 }}
-                    transition={{ type: 'spring', stiffness: 500 }}
-                  >
-                    {item.label}
-                  </motion.h4>
-                  <motion.p>
-                    {item.value}
-                  </motion.p>
-                </motion.div>
-              ))}
-            </div>
-            
-
-            
             <div className="about-stats">
-              {[
-                { number: '3+', text: 'Years of Experience' },
-                { number: '5+', text: 'Research Publications' },
-                { number: '4', text: 'Awards & Recognitions' }
-              ].map((stat, index) => (
+              {stats.map((stat, index) => (
                 <motion.div 
                   className="stat-item" 
                   key={index}
@@ -136,7 +114,14 @@ const About = () => {
               ))}
             </div>
             
-            <a href="#contact" className="btn">Hire Me</a>
+            <motion.a 
+              href="#contact" 
+              className="btn"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              Contact Me
+            </motion.a>
           </motion.div>
         </div>
         
@@ -166,12 +151,7 @@ const About = () => {
           </motion.p>
           
           <div className="skills-container">
-            {[
-              { name: 'NestJS / Node.js / Express', percentage: 95 },
-              { name: 'JavaScript / TypeScript', percentage: 90 },
-              { name: 'Python / Machine Learning', percentage: 85 },
-              { name: 'Docker / Jenkins / Terraform', percentage: 80 }
-            ].map((skill, index) => (
+            {skills.map((skill, index) => (
               <motion.div 
                 className="skill-item"
                 key={index}
@@ -197,16 +177,12 @@ const About = () => {
                 </motion.h4>
                 <div className="skill-bar">
                   <motion.div 
-                    className="skill-progress" 
+                    className="skill-progress"
                     initial={{ width: 0 }}
                     whileInView={{ width: `${skill.percentage}%` }}
                     viewport={{ once: true }}
-                    transition={{ 
-                      duration: 1.5, 
-                      delay: 0.2 + (0.1 * index),
-                      ease: [0.25, 0.1, 0.25, 1]
-                    }}
-                  ></motion.div>
+                    transition={{ duration: 1, delay: 0.2 * index }}
+                  />
                 </div>
               </motion.div>
             ))}

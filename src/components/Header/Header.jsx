@@ -21,8 +21,26 @@ const Header = () => {
     };
   }, []);
 
+  useEffect(() => {
+    // Toggle body scroll when menu is open
+    if (isMenuOpen) {
+      document.body.classList.add('menu-open');
+    } else {
+      document.body.classList.remove('menu-open');
+    }
+
+    // Cleanup on unmount
+    return () => {
+      document.body.classList.remove('menu-open');
+    };
+  }, [isMenuOpen]);
+
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
+  };
+
+  const closeMenu = () => {
+    setIsMenuOpen(false);
   };
 
   return (
@@ -30,11 +48,14 @@ const Header = () => {
       <div className="container">
         <div className="header-content">
           <div className="logo">
-            <Link to="/">Abdullah Habberrih</Link>
+            <Link to="/" onClick={closeMenu}>Abdullah Habberrih</Link>
           </div>
           <div
             className={`mobile-menu-toggle ${isMenuOpen ? 'active' : ''}`}
             onClick={toggleMenu}
+            aria-label="Toggle menu"
+            role="button"
+            tabIndex={0}
           >
             <span></span>
             <span></span>
@@ -43,32 +64,32 @@ const Header = () => {
           <nav className={`nav-menu ${isMenuOpen ? 'active' : ''}`}>
             <ul>
               <li>
-                <a href="#home" onClick={() => setIsMenuOpen(false)}>
+                <a href="#home" onClick={closeMenu}>
                   Home
                 </a>
               </li>
               <li>
-                <a href="#about" onClick={() => setIsMenuOpen(false)}>
+                <a href="#about" onClick={closeMenu}>
                   About
                 </a>
               </li>
               <li>
-                <a href="#portfolio" onClick={() => setIsMenuOpen(false)}>
+                <a href="#portfolio" onClick={closeMenu}>
                   Portfolio
                 </a>
               </li>
               <li>
-                <a href="#services" onClick={() => setIsMenuOpen(false)}>
+                <a href="#services" onClick={closeMenu}>
                   Services
                 </a>
               </li>
               <li>
-                <a href="#news" onClick={() => setIsMenuOpen(false)}>
+                <a href="#news" onClick={closeMenu}>
                   News
                 </a>
               </li>
               <li>
-                <a href="#contact" onClick={() => setIsMenuOpen(false)}>
+                <a href="#contact" onClick={closeMenu}>
                   Contact
                 </a>
               </li>
@@ -77,6 +98,7 @@ const Header = () => {
                   href="/files/habberrih-resume.pdf"
                   className="cv-button"
                   download="habberrih-resume.pdf"
+                  onClick={closeMenu}
                 >
                   Download CV
                 </a>

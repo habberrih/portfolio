@@ -3,14 +3,14 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 
 // Components
-import Header from './components/Header/Header';
-import Hero from './components/Hero/Hero';
-import About from './components/About/About';
-import Portfolio from './components/Portfolio/Portfolio';
-import Services from './components/Services/Services';
-import News from './components/News/News';
-import Contact from './components/Contact/Contact';
-import Footer from './components/Footer/Footer';
+import Header from './components/Header/Header.jsx';
+import Hero from './components/Hero/Hero.jsx';
+import About from './components/About/About.jsx';
+import Portfolio from './components/Portfolio/Portfolio.jsx';
+import Services from './components/Services/Services.jsx';
+import News from './components/News/News.jsx';
+import Contact from './components/Contact/Contact.jsx';
+import Footer from './components/Footer/Footer.jsx';
 
 function App() {
   return (

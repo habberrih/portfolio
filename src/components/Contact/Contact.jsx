@@ -44,13 +44,37 @@ const Contact = () => {
       message: ''
     });
   };
+
+  const contactInfo = [
+    {
+      icon: faMapMarkerAlt,
+      title: 'Location',
+      value: 'Rome, Italy'
+    },
+    {
+      icon: faPhone,
+      title: 'Phone',
+      value: '+218 643 65 26'
+    },
+    {
+      icon: faEnvelope,
+      title: 'Email',
+      value: 'a.habberreh@gmail.com'
+    }
+  ];
   
   return (
     <section id="contact" className="contact">
       <div className="container">
-        <div className="section-title">
+        <motion.div 
+          className="section-title"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
           <h2>Contact Me</h2>
-        </div>
+        </motion.div>
         
         <div className="contact-content">
           <motion.div 
@@ -65,35 +89,24 @@ const Contact = () => {
               If you're interested in my research, development work, or would like to collaborate on a project, feel free to reach out through the form or contact me directly using the information provided.
             </p>
             
-            <div className="info-item">
-              <div className="icon">
-                <FontAwesomeIcon icon={faMapMarkerAlt} />
-              </div>
-              <div className="text">
-                <h4>Location</h4>
-                <p>Libya</p>
-              </div>
-            </div>
-            
-            <div className="info-item">
-              <div className="icon">
-                <FontAwesomeIcon icon={faPhone} />
-              </div>
-              <div className="text">
-                <h4>Phone</h4>
-                <p>+218 643 65 26</p>
-              </div>
-            </div>
-            
-            <div className="info-item">
-              <div className="icon">
-                <FontAwesomeIcon icon={faEnvelope} />
-              </div>
-              <div className="text">
-                <h4>Email</h4>
-                <p>a.habberreh@gmail.com</p>
-              </div>
-            </div>
+            {contactInfo.map((info, index) => (
+              <motion.div 
+                className="info-item"
+                key={index}
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+              >
+                <div className="icon">
+                  <FontAwesomeIcon icon={info.icon} />
+                </div>
+                <div className="text">
+                  <h4>{info.title}</h4>
+                  <p>{info.value}</p>
+                </div>
+              </motion.div>
+            ))}
           </motion.div>
           
           <motion.div 
@@ -104,9 +117,14 @@ const Contact = () => {
             transition={{ duration: 0.8 }}
           >
             {formStatus.submitted && formStatus.success ? (
-              <div className="success-message">
+              <motion.div 
+                className="success-message"
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+              >
                 <p>{formStatus.message}</p>
-              </div>
+              </motion.div>
             ) : (
               <form onSubmit={handleSubmit}>
                 <div className="form-group">
@@ -152,7 +170,14 @@ const Contact = () => {
                   ></textarea>
                 </div>
                 
-                <button type="submit" className="btn">Submit Now</button>
+                <motion.button 
+                  type="submit" 
+                  className="btn"
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  Send Message
+                </motion.button>
               </form>
             )}
           </motion.div>

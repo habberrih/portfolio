@@ -1,0 +1,50 @@
+version: '3.8'
+
+services:
+  # Development service
+  dev:
+    build:
+      context: .
+      target: development
+    volumes:
+      - .:/app
+      - /app/node_modules
+    ports:
+      - "5173:5173"
+    environment:
+      - NODE_ENV=development
+    command: npm run dev
+    networks:
+      - app-network
+
+  # Production service
+  prod:
+    build:
+      context: .
+      target: production
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx/conf.d:/etc/nginx/conf.d
+      - ./certbot/conf:/etc/letsencrypt
+      - ./certbot/www:/var/www/certbot
+    environment:
+      - NODE_ENV=production
+    networks:
+      - app-network
+    restart: unless-stopped
+    depends_on:
+      - certbot
+
+  # Certbot service for SSL certificates
+  certbot:
+    image: certbot/certbot
+    volumes:
+      - ./certbot/conf:/etc/letsencrypt
+      - ./certbot/www:/var/www/certbot
+    entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot renew; sleep 12h & wait $${!}; done;'"
+
+networks:
+  app-network:
+    driver: bridge 
