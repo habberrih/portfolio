@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import './Header.css';
 
 const Header = () => {
@@ -48,7 +48,7 @@ const Header = () => {
       <div className="container">
         <div className="header-content">
           <div className="logo">
-            <Link to="/" onClick={closeMenu}>Abdullah Habberrih</Link>
+            <Link href="/" onClick={closeMenu}>Abdullah Habberrih</Link>
           </div>
           <div
             className={`mobile-menu-toggle ${isMenuOpen ? 'active' : ''}`}
