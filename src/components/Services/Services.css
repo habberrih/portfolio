@@ -1,6 +1,4 @@
-.services {
-  background-color: #fff;
-}
+.services { background-color: var(--surface-1); }
 
 .services-intro {
   text-align: center;
@@ -25,12 +23,12 @@
 }
 
 .service-item {
-  background-color: #f9f9f9;
+  background-color: var(--surface-2);
   border-radius: 10px;
   padding: 40px 30px;
   text-align: center;
   transition: var(--transition);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  box-shadow: var(--shadow);
 }
 
 .service-item:hover {
@@ -71,7 +69,7 @@
   text-align: center;
   margin-top: 60px;
   padding: 40px;
-  background-color: #f9f9f9;
+  background-color: var(--surface-2);
   border-radius: 10px;
 }
 
