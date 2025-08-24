@@ -1,6 +1,9 @@
+"use client";
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import './Header.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMoon, faSun } from '@fortawesome/free-solid-svg-icons';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -41,6 +44,43 @@ const Header = () => {
 
   const closeMenu = () => {
     setIsMenuOpen(false);
+  };
+
+  // Theme toggle
+  const [theme, setTheme] = useState('system');
+
+  useEffect(() => {
+    if (typeof document !== 'undefined') {
+      const attr = document.documentElement.getAttribute('data-theme');
+      const initial = attr === 'dark' ? 'dark' : 'light';
+      setTheme(initial);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (typeof document === 'undefined') return;
+    const html = document.documentElement;
+    if (theme === 'dark') {
+      html.setAttribute('data-theme', 'dark');
+    } else {
+      html.removeAttribute('data-theme');
+    }
+    try { localStorage.setItem('theme', theme); } catch {}
+  }, [theme]);
+
+  const toggleTheme = () => {
+    if (typeof document !== 'undefined') {
+      const html = document.documentElement;
+      html.classList.add('theme-transition');
+      setTimeout(() => html.classList.remove('theme-transition'), 400);
+    }
+    try {
+      // Use global toggler if available to avoid hydration edge cases
+      const next = typeof window !== 'undefined' && window.__toggleTheme ? window.__toggleTheme() : (theme === 'dark' ? 'light' : 'dark');
+      setTheme(next);
+    } catch {
+      setTheme((t) => (t === 'dark' ? 'light' : 'dark'));
+    }
   };
 
   return (
@@ -102,6 +142,16 @@ const Header = () => {
                 >
                   Download CV
                 </a>
+              </li>
+              <li>
+                <button
+                  className="theme-toggle-btn"
+                  type="button"
+                  aria-label="Toggle dark mode"
+                  onClick={toggleTheme}
+                >
+                  <FontAwesomeIcon icon={theme === 'dark' ? faSun : faMoon} />
+                </button>
               </li>
             </ul>
           </nav>
