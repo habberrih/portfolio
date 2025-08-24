@@ -1,46 +1,35 @@
-# Build stage
-FROM node:18-alpine as builder
+# Base image
+FROM node:18-alpine AS base
 
-# Set working directory
+# Install dependencies only when needed
+FROM base AS deps
 WORKDIR /app
-
-# Copy package files
 COPY package*.json ./
-
-# Install dependencies
-RUN npm install
-
-# Copy all files
-COPY . .
+RUN npm ci || npm install
 
 # Build the app
+FROM base AS builder
+WORKDIR /app
+COPY --from=deps /app/node_modules ./node_modules
+COPY . .
 RUN npm run build
 
-# Development stage
-FROM node:18-alpine as development
-
+# Development image
+FROM base AS development
 WORKDIR /app
-
+ENV NODE_ENV=development
 COPY package*.json ./
-RUN npm install
-
+RUN npm ci || npm install
 COPY . .
-
-EXPOSE 5173
-
+EXPOSE 3000
 CMD ["npm", "run", "dev"]
 
-# Production stage
-FROM nginx:alpine as production
-
-# Copy built assets from build stage
-COPY --from=builder /app/dist /usr/share/nginx/html
-
-# Copy nginx configuration
-COPY nginx/nginx.conf /etc/nginx/conf.d/default.conf
-
-# Expose port 80
-EXPOSE 80
-
-# Start nginx
-CMD ["nginx", "-g", "daemon off;"]
+# Production image (standalone)
+FROM base AS production
+WORKDIR /app
+ENV NODE_ENV=production
+COPY --from=builder /app/public ./public
+COPY --from=builder /app/.next/standalone ./
+COPY --from=builder /app/.next/static ./.next/static
+EXPOSE 3000
+CMD ["node", "server.js"]
