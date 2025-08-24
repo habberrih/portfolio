@@ -3,24 +3,20 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "next": "^14.2.5",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "@fortawesome/fontawesome-svg-core": "^6.5.1",
     "@fortawesome/free-brands-svg-icons": "^6.5.1",
     "@fortawesome/free-solid-svg-icons": "^6.5.1",
     "@fortawesome/react-fontawesome": "^0.2.0",
-    "@testing-library/jest-dom": "^6.1.4",
-    "@testing-library/react": "^14.1.2",
-    "@testing-library/user-event": "^14.5.1",
     "framer-motion": "^10.16.16",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-router-dom": "^6.20.1",
-    "sass": "^1.69.5",
-    "web-vitals": "^3.5.0"
+    "sass": "^1.69.5"
   },
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
+    "dev": "next dev -p 3000",
+    "build": "next build",
+    "start": "node .next/standalone/server.js"
   },
   "eslintConfig": {
     "extends": [
@@ -40,8 +36,5 @@
       "last 1 safari version"
     ]
   },
-  "devDependencies": {
-    "@vitejs/plugin-react": "^4.2.1",
-    "vite": "^5.0.8"
-  }
+  "devDependencies": {}
 }
