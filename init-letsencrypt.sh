@@ -1,17 +1,25 @@
-#!/bin/bash
+#!/bin/sh
+
+set -euo pipefail
+
+DOMAIN_MAIN="habberrih.ly"
+DOMAIN_WWW="www.habberrih.ly"
+EMAIL="a.habberreh@gmail.com" # change to your email
 
 # Create required directories
-mkdir -p certbot/conf/live/habberrih.ly
+mkdir -p certbot/conf/live/${DOMAIN_MAIN}
 mkdir -p certbot/www
 
-# Stop any running containers
-docker-compose down
+# Start app and nginx (HTTP must be reachable for ACME challenge)
+docker compose up -d app nginx
 
-# Get SSL certificate
-docker-compose run --rm certbot certonly --webroot --webroot-path /var/www/certbot \
-    --email a.habberreh@gmail.com \
-    --agree-tos --no-eff-email \
-    -d habberrih.ly -d www.habberrih.ly
+# Obtain/renew certificate via webroot
+docker compose run --rm certbot certonly \
+  --webroot --webroot-path /var/www/certbot \
+  --email "$EMAIL" --agree-tos --no-eff-email \
+  -d "$DOMAIN_MAIN" -d "$DOMAIN_WWW"
 
-# Start the services
-docker-compose up -d 
+# Reload nginx to pick up new certs
+docker compose exec -T nginx nginx -s reload || true
+
+echo "Certificates obtained/renewed for $DOMAIN_MAIN and $DOMAIN_WWW."
