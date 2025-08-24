@@ -81,7 +81,7 @@ const Portfolio = () => {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            whileHover={{ color: '#007bff', scale: 1.05 }}
+            whileHover={{ color: 'var(--primary-color)', scale: 1.05 }}
           >
             Portfolio
           </motion.h2>
@@ -107,7 +107,7 @@ const Portfolio = () => {
               key={index}
               className={`filter-btn ${activeFilter === filter ? 'active' : ''}`}
               onClick={() => filterItems(filter)}
-              whileHover={{ scale: 1.05, backgroundColor: activeFilter === filter ? '#007bff' : '#f0f0f0' }}
+              whileHover={{ scale: 1.05, backgroundColor: activeFilter === filter ? 'var(--primary-color)' : 'var(--surface-2)' }}
               whileTap={{ scale: 0.95 }}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -171,7 +171,7 @@ const Portfolio = () => {
                 transition={{ duration: 0.5, delay: 0.8 }}
               >
                 <motion.h3
-                  whileHover={{ color: '#007bff', x: 5 }}
+                  whileHover={{ color: 'var(--primary-color)', x: 5 }}
                   transition={{ duration: 0.2 }}
                 >
                   {project.title}
@@ -184,7 +184,7 @@ const Portfolio = () => {
                   target="_blank" 
                   rel="noopener noreferrer" 
                   className="btn-view"
-                  whileHover={{ scale: 1.05, backgroundColor: '#007bff', color: '#fff' }}
+                  whileHover={{ scale: 1.05, backgroundColor: 'var(--primary-color)', color: '#fff' }}
                   whileTap={{ scale: 0.95 }}
                 >
                   View Project
