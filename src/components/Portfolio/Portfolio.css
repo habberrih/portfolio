@@ -1,9 +1,4 @@
-.portfolio {
-  background-color: #f9f9f9;
-  padding: 80px 0;
-  background-color: var(--light-color);
-  overflow: hidden;
-}
+.portfolio { background-color: var(--surface-2); padding: 80px 0; overflow: hidden; }
 
 .portfolio-filters {
   display: flex;
@@ -20,11 +15,11 @@
   cursor: pointer;
   font-size: 16px;
   border-radius: 30px;
-  background-color: #f0f0f0;
+  background-color: var(--surface-1);
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  box-shadow: var(--shadow);
 }
 
 .filter-btn.active {
@@ -62,8 +57,8 @@
 .portfolio-item {
   border-radius: 10px;
   overflow: hidden;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  background-color: #fff;
+  box-shadow: var(--shadow);
+  background-color: var(--surface-1);
   transition: all 0.4s ease;
   position: relative;
 }
@@ -137,7 +132,7 @@
 .btn-view {
   display: inline-block;
   padding: 8px 20px;
-  background-color: #f0f0f0;
+  background-color: var(--surface-2);
   color: var(--dark-color);
   border-radius: 30px;
   text-decoration: none;
@@ -146,7 +141,7 @@
   border: none;
   cursor: pointer;
   font-weight: 500;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  box-shadow: var(--shadow);
 }
 
 .btn-view:hover {
