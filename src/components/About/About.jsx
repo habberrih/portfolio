@@ -33,7 +33,7 @@ const About = () => {
         >
           <motion.h2 
             style={{ scale }}
-            whileHover={{ scale: 1.05, color: '#007bff' }}
+            whileHover={{ scale: 1.05, color: 'var(--primary-color)' }}
             transition={{ type: 'spring', stiffness: 300 }}
           >
             About Me
@@ -53,7 +53,7 @@ const About = () => {
                 className="about-image-placeholder"
                 whileHover={{ 
                   scale: 1.05,
-                  boxShadow: '0 10px 25px rgba(0, 123, 255, 0.3)'
+                  boxShadow: '0 10px 25px rgba(37, 99, 235, 0.3)'
                 }}
                 transition={{ type: 'spring', stiffness: 300 }}
               >
@@ -94,7 +94,7 @@ const About = () => {
                   transition={{ delay: 0.2 * index, duration: 0.5 }}
                   whileHover={{ 
                     y: -10,
-                    boxShadow: '0 10px 25px rgba(0, 123, 255, 0.2)'
+                    boxShadow: '0 10px 25px rgba(37, 99, 235, 0.2)'
                   }}
                 >
                   <motion.h3
@@ -137,7 +137,7 @@ const About = () => {
             whileInView={{ y: 0, opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            whileHover={{ color: '#007bff', x: 5 }}
+            whileHover={{ color: 'var(--primary-color)', x: 5 }}
           >
             Technical Skills & Expertise
           </motion.h3>
@@ -171,7 +171,7 @@ const About = () => {
                 }}
               >
                 <motion.h4
-                  whileHover={{ color: '#007bff' }}
+                  whileHover={{ color: 'var(--primary-color)' }}
                 >
                   {skill.name}
                 </motion.h4>
