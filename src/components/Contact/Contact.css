@@ -1,7 +1,4 @@
-.contact {
-  background-color: #f9f9f9;
-  padding: 80px 0;
-}
+.contact { background-color: var(--surface-2); padding: 80px 0; }
 
 .contact-content {
   display: grid;
@@ -33,9 +30,9 @@
   margin-bottom: 30px;
   transition: var(--transition);
   padding: 15px;
-  background-color: #fff;
+  background-color: var(--surface-1);
   border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  box-shadow: var(--shadow);
 }
 
 .info-item:hover {
@@ -76,10 +73,10 @@
 }
 
 .contact-form form {
-  background-color: #fff;
+  background-color: var(--surface-1);
   padding: 40px;
   border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  box-shadow: var(--shadow);
 }
 
 .form-group {
@@ -90,19 +87,19 @@
 .form-group textarea {
   width: 100%;
   padding: 15px;
-  border: 1px solid #e0e0e0;
+  border: 1px solid var(--border);
   border-radius: 5px;
   font-size: 16px;
   transition: var(--transition);
-  background-color: #f8f9fa;
+  background-color: var(--surface-2);
 }
 
 .form-group input:focus,
 .form-group textarea:focus {
   border-color: var(--primary-color);
   outline: none;
-  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
-  background-color: #fff;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+  background-color: var(--surface-1);
 }
 
 .form-group textarea {
