@@ -79,7 +79,7 @@ const Hero = () => {
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              whileHover={{ x: 5, color: '#007bff' }}
+              whileHover={{ x: 5, color: 'var(--primary-color)' }}
             >
               Hello, I'm
             </motion.h3>
@@ -94,7 +94,7 @@ const Hero = () => {
               }}
               whileHover={{ 
                 scale: 1.05, 
-                color: '#007bff',
+                color: 'var(--primary-color)',
                 transition: { duration: 0.2 } 
               }}
             >
@@ -126,7 +126,7 @@ const Hero = () => {
                 className="btn"
                 whileHover={{ 
                   scale: 1.05, 
-                  boxShadow: '0 10px 25px rgba(0, 123, 255, 0.3)' 
+                  boxShadow: '0 10px 25px rgba(37, 99, 235, 0.3)'
                 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -155,7 +155,7 @@ const Hero = () => {
                   whileHover={{ 
                     y: -5, 
                     scale: 1.2,
-                    backgroundColor: '#007bff',
+                    backgroundColor: 'var(--primary-color)',
                     rotate: [0, 10, -10, 0],
                     transition: { duration: 0.3 }
                   }}
@@ -178,7 +178,7 @@ const Hero = () => {
               animate={controls}
               whileHover={{ 
                 scale: 1.05, 
-                boxShadow: '0 20px 40px rgba(0, 123, 255, 0.3)',
+                boxShadow: '0 20px 40px rgba(37, 99, 235, 0.3)',
                 rotate: 5,
                 transition: { duration: 0.3 }
               }}
