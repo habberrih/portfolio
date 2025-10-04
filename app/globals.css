@@ -1,4 +1,19 @@
-/* Global Styles */
+/* Base (from src/index.css) */
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* Global Styles (from src/App.css) */
 :root {
   --primary-color: #007bff;
   --secondary-color: #6c757d;
@@ -197,16 +212,5 @@ img {
   h3 {
     font-size: 20px;
   }
-
-  p {
-    font-size: 15px;
-  }
 }
 
-/* Touch Device Optimizations */
-@media (hover: none) {
-  .btn:hover {
-    transform: none;
-    box-shadow: none;
-  }
-}

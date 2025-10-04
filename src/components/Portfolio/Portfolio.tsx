@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import './Portfolio.css';
+import { motion } from 'framer-motion';
 
 const Portfolio = () => {
-  const [hoveredItem, setHoveredItem] = useState(null);
+  const [hoveredItem, setHoveredItem] = useState<string | null>(null);
   const [activeFilter, setActiveFilter] = useState('all');
   
-  const filterItems = (category) => {
+  const filterItems = (category: string) => {
     setActiveFilter(category);
   };
   const [filter, setFilter] = useState('all');

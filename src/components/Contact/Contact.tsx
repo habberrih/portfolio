@@ -2,23 +2,35 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMapMarkerAlt, faPhone, faEnvelope } from '@fortawesome/free-solid-svg-icons';
-import './Contact.css';
+
+type FormData = {
+  name: string;
+  email: string;
+  subject: string;
+  message: string;
+};
+
+type FormStatus = {
+  submitted: boolean;
+  success: boolean;
+  message: string;
+};
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<FormData>({
     name: '',
     email: '',
     subject: '',
     message: ''
   });
   
-  const [formStatus, setFormStatus] = useState({
+  const [formStatus, setFormStatus] = useState<FormStatus>({
     submitted: false,
     success: false,
     message: ''
   });
   
-  const handleChange = (e) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData(prevState => ({
       ...prevState,
@@ -26,17 +38,14 @@ const Contact = () => {
     }));
   };
   
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // In a real application, you would send the form data to a server
-    // This is just a simulation for demonstration purposes
     setFormStatus({
       submitted: true,
       success: true,
       message: 'Thank you for your message! I will get back to you soon.'
     });
     
-    // Reset form after successful submission
     setFormData({
       name: '',
       email: '',
