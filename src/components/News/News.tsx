@@ -94,7 +94,7 @@ const News = () => {
         'https://via.placeholder.com/1200x800?text=I-RIA+2023+2',
         'https://via.placeholder.com/1200x800?text=I-RIA+2023+3'
       ],
-      fullDescription: 'I was honored to receive the Bronze Award at the Innovative Research, Invention and Application Exhibition (I-RIA) 2023 Competition in Malaysia. This international recognition was for my research on Sentiment Analysis of Libyan Dialect Using Machine Learning with Stemming and Stopwords Removal. The competition featured inn'
+      fullDescription: 'I was honored to receive the Bronze Award at the Innovative Research, Invention and Application Exhibition (I-RIA) 2023 Competition in Malaysia. This international recognition was for my research on Sentiment Analysis of Libyan Dialect Using Machine Learning with Stemming and Stopwords Removal. The competition featured innovative projects from participants worldwide, and it was a privilege to present my work on such a global stage.',
     },
     {
       id: 5,
