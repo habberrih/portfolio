@@ -43,7 +43,7 @@
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
 
-.info-item .icon {
+.icon {
   width: 50px;
   height: 50px;
   border-radius: 50%;
@@ -63,13 +63,13 @@
   color: #fff;
 }
 
-.info-item .text h4 {
+.text h4 {
   font-size: 18px;
   margin-bottom: 5px;
   color: var(--dark-color);
 }
 
-.info-item .text p {
+.text p {
   color: var(--secondary-color);
   font-size: 16px;
   margin: 0;
@@ -171,17 +171,17 @@
     margin-bottom: 20px;
   }
 
-  .info-item .icon {
+  .icon {
     width: 45px;
     height: 45px;
     font-size: 18px;
   }
 
-  .info-item .text h4 {
+  .text h4 {
     font-size: 16px;
   }
 
-  .info-item .text p {
+  .text p {
     font-size: 15px;
   }
 }
@@ -205,18 +205,18 @@
     padding: 12px;
   }
 
-  .info-item .icon {
+  .icon {
     width: 40px;
     height: 40px;
     font-size: 16px;
     margin-right: 15px;
   }
 
-  .info-item .text h4 {
+  .text h4 {
     font-size: 15px;
   }
 
-  .info-item .text p {
+  .text p {
     font-size: 14px;
   }
 
@@ -224,3 +224,4 @@
     width: 100%;
   }
 }
+

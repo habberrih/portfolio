@@ -2,7 +2,6 @@ import React from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faNode, faDocker, faPython, faJs, faReact, faGithub } from '@fortawesome/free-brands-svg-icons';
-import './About.css';
 
 const About = () => {
   const { scrollYProgress } = useScroll();

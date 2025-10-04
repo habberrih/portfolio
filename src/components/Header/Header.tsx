@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import './Header.css';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -22,14 +21,12 @@ const Header = () => {
   }, []);
 
   useEffect(() => {
-    // Toggle body scroll when menu is open
     if (isMenuOpen) {
       document.body.classList.add('menu-open');
     } else {
       document.body.classList.remove('menu-open');
     }
 
-    // Cleanup on unmount
     return () => {
       document.body.classList.remove('menu-open');
     };

@@ -2,20 +2,31 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrophy, faHandsHelping, faGraduationCap, faPlaneDeparture, faTimes, faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
-import './News.css';
+import type { IconDefinition } from '@fortawesome/fontawesome-svg-core';
+
+type Category = 'award' | 'volunteer' | 'education' | 'travel';
+
+type NewsItem = {
+  id: number;
+  category: Category;
+  icon: IconDefinition;
+  title: string;
+  description: string;
+  date: string;
+  image: string;
+  images: string[];
+  fullDescription: string;
+};
 
 const News = () => {
-  const [selectedNews, setSelectedNews] = useState(null);
+  const [selectedNews, setSelectedNews] = useState<NewsItem | null>(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   
-  // Reset image index when a new news item is selected
   React.useEffect(() => {
     if (selectedNews) {
       setCurrentImageIndex(0);
-      // Prevent body scrolling when modal is open
       document.body.style.overflow = 'hidden';
     } else {
-      // Re-enable body scrolling when modal is closed
       document.body.style.overflow = 'auto';
     }
     
@@ -24,7 +35,7 @@ const News = () => {
     };
   }, [selectedNews]);
 
-  const newsItems = [
+  const newsItems: NewsItem[] = [
     {
       id: 1,
       category: 'award',
@@ -83,49 +94,47 @@ const News = () => {
         'https://via.placeholder.com/1200x800?text=I-RIA+2023+2',
         'https://via.placeholder.com/1200x800?text=I-RIA+2023+3'
       ],
-      fullDescription: 'I was honored to receive the Bronze Award at the Innovative Research, Invention and Application Exhibition (I-RIA) 2023 Competition in Malaysia. This international recognition was for my research on Sentiment Analysis of Libyan Dialect Using Machine Learning with Stemming and Stopwords Removal. The competition featured innovative research projects from around the world, and I was proud to represent Libya and showcase our contribution to NLP research.'
+      fullDescription: 'I was honored to receive the Bronze Award at the Innovative Research, Invention and Application Exhibition (I-RIA) 2023 Competition in Malaysia. This international recognition was for my research on Sentiment Analysis of Libyan Dialect Using Machine Learning with Stemming and Stopwords Removal. The competition featured inn'
     },
     {
       id: 5,
       category: 'volunteer',
       icon: faHandsHelping,
-      title: 'Huawei Seeds For The Future Ambassador',
-      description: 'Represented Libya as an Ambassador in Huawei\'s prestigious SFTF program, cultivating young talent in technology and innovation.',
-      date: 'June 2022 - June 2023',
-      image: 'https://via.placeholder.com/600x400?text=Huawei+SFTF',
+      title: 'Volunteer: Youth Tech Mentorship Program',
+      description: 'Mentored young students in programming fundamentals and project-based learning.',
+      date: 'March 2024',
+      image: 'https://via.placeholder.com/600x400?text=Mentorship+Program',
       images: [
-        'https://via.placeholder.com/1200x800?text=Huawei+SFTF+1',
-        'https://via.placeholder.com/1200x800?text=Huawei+SFTF+2',
-        'https://via.placeholder.com/1200x800?text=Huawei+SFTF+3'
+        'https://via.placeholder.com/1200x800?text=Mentorship+Program+1',
+        'https://via.placeholder.com/1200x800?text=Mentorship+Program+2'
       ],
-      fullDescription: 'From June 2022 to June 2023, I served as an Ambassador for Libya in Huawei\'s prestigious Seeds For The Future (SFTF) program. This global initiative aims to cultivate young talent in technology and innovation. As an Ambassador, I represented Libya in international forums, facilitated knowledge transfer, and helped integrate advanced technologies and innovative practices into local educational and tech communities.'
+      fullDescription: 'Volunteered as a mentor for aspiring young developers, guiding them through fundamental concepts in programming and helping them build their first projects.'
     },
     {
       id: 6,
-      category: 'volunteer',
-      icon: faHandsHelping,
-      title: 'Technical Team Leader at IT Faculty Students\' Union',
-      description: 'Led the technical team for the college students\' union, orchestrated programming competitions, and fostered innovation among student volunteers.',
-      date: 'May 2022 - October 2023',
-      image: 'https://via.placeholder.com/600x400?text=IT+Faculty+Union',
+      category: 'education',
+      icon: faGraduationCap,
+      title: 'Completed Advanced NLP Course',
+      description: 'Successfully completed an advanced course in Natural Language Processing.',
+      date: 'May 2024',
+      image: 'https://via.placeholder.com/600x400?text=Advanced+NLP+Course',
       images: [
-        'https://via.placeholder.com/1200x800?text=IT+Faculty+Union+1',
-        'https://via.placeholder.com/1200x800?text=IT+Faculty+Union+2'
+        'https://via.placeholder.com/1200x800?text=Advanced+NLP+1'
       ],
-      fullDescription: 'From May 2022 to October 2023, I served as the Technical Team Leader for the college students\' union at the IT Faculty. In this role, I leveraged my technical expertise to support and enhance student learning and engagement through technology. I orchestrated programming competitions during the sixth technical and cultural season at my college, managing logistics, setting challenges, and fostering a competitive yet collaborative environment for participants.'
+      fullDescription: 'This course deepened my understanding of transformer architectures, attention mechanisms, and practical applications of NLP in real-world problems.'
     },
     {
       id: 7,
       category: 'education',
       icon: faGraduationCap,
-      title: 'Master\'s Degree - Student Exchange of Erasmus+ ICM Program',
-      description: 'Studying Computer Science at Sapienza University of Rome as part of the Erasmus+ exchange program.',
-      date: 'September 2024 - February 2025',
+      title: 'Erasmus+ ICM Program at Sapienza University',
+      description: 'Participated in a student exchange at Sapienza University of Rome, Italy.',
+      date: 'Sep 2024 - Feb 2025',
       image: 'https://via.placeholder.com/600x400?text=Sapienza+University',
       images: [
-        'https://via.placeholder.com/1200x800?text=Sapienza+University+1',
-        'https://via.placeholder.com/1200x800?text=Sapienza+University+2',
-        'https://via.placeholder.com/1200x800?text=Sapienza+University+3'
+        'https://via.placeholder.com/1200x800?text=Sapienza+1',
+        'https://via.placeholder.com/1200x800?text=Sapienza+2',
+        'https://via.placeholder.com/1200x800?text=Sapienza+3'
       ],
       fullDescription: 'From September 2024 to February 2025, I participated in the Erasmus+ ICM Program as a student exchange at Sapienza University of Rome, Italy. This prestigious opportunity allowed me to expand my knowledge in Computer Science, collaborate with international researchers, and experience a different academic environment. During my time at Sapienza, I took advanced courses in AI, machine learning, and data science, which complemented my research interests.'
     },
@@ -147,7 +156,7 @@ const News = () => {
     }
   ];
 
-  const [filter, setFilter] = React.useState('all');
+  const [filter, setFilter] = React.useState<Category | 'all'>('all');
 
   const filteredNews = filter === 'all' 
     ? newsItems 
@@ -226,7 +235,6 @@ const News = () => {
           ))}
         </div>
 
-        {/* Modal for detailed news view */}
         <AnimatePresence>
           {selectedNews && (
             <motion.div 
@@ -259,7 +267,7 @@ const News = () => {
                     {selectedNews.images.length > 1 && (
                       <>
                         <button 
-                          className="image-nav prev"
+                          className={`image-nav prev`}
                           onClick={(e) => {
                             e.stopPropagation();
                             setCurrentImageIndex(prev => 
@@ -271,7 +279,7 @@ const News = () => {
                         </button>
                         
                         <button 
-                          className="image-nav next"
+                          className={`image-nav next`}
                           onClick={(e) => {
                             e.stopPropagation();
                             setCurrentImageIndex(prev => 
@@ -309,7 +317,6 @@ const News = () => {
                     <span className="modal-date">{selectedNews.date}</span>
                     <p className="modal-description">{selectedNews.fullDescription}</p>
                     
-                    {/* Additional content to demonstrate scrolling */}
                     <div className="additional-details">
                       <h3>Additional Details</h3>
                       <p>This section contains additional information about this event or achievement. You can scroll down to view all the content in this modal window. The scrollbar has been styled to match the theme of the website.</p>

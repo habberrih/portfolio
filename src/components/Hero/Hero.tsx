@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { motion, useAnimation, AnimatePresence } from 'framer-motion';
+import { motion, useAnimation } from 'framer-motion';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faLinkedin, faYoutube } from '@fortawesome/free-brands-svg-icons';
-import './Hero.css';
 
 const Hero = () => {
   const [typingText, setTypingText] = useState('');
@@ -12,7 +11,6 @@ const Hero = () => {
   const [currentRoleIndex, setCurrentRoleIndex] = useState(0);
   const controls = useAnimation();
   
-  // Typing animation effect
   useEffect(() => {
     const currentRole = roles[currentRoleIndex];
     
@@ -24,9 +22,7 @@ const Hero = () => {
       
       return () => clearTimeout(timeout);
     } else {
-      // Pause at the end of typing before erasing
       const timeout = setTimeout(() => {
-        // Start erasing
         const eraseInterval = setInterval(() => {
           setTypingText(prev => prev.substring(0, prev.length - 1));
           
@@ -44,7 +40,6 @@ const Hero = () => {
     }
   }, [typingIndex, currentRoleIndex, typingText, roles]);
   
-  // Blinking cursor effect
   useEffect(() => {
     const cursorInterval = setInterval(() => {
       setShowCursor(prev => !prev);
@@ -53,7 +48,6 @@ const Hero = () => {
     return () => clearInterval(cursorInterval);
   }, []);
   
-  // Floating animation for profile image
   useEffect(() => {
     controls.start({
       y: [0, -20, 0],
@@ -172,7 +166,6 @@ const Hero = () => {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            {/* You can add your profile image here */}
             <motion.div 
               className="profile-image-placeholder"
               animate={controls}
@@ -191,9 +184,8 @@ const Hero = () => {
                 Your Photo
               </motion.span>
               
-              {/* Decorative elements */}
               <motion.div 
-                className="floating-element element-1"
+                className={`floating-element element-1`}
                 animate={{
                   x: [0, 20, 0],
                   y: [0, -20, 0],
@@ -202,7 +194,7 @@ const Hero = () => {
                 }}
               />
               <motion.div 
-                className="floating-element element-2"
+                className={`floating-element element-2`}
                 animate={{
                   x: [0, -15, 0],
                   y: [0, 15, 0],
@@ -211,7 +203,7 @@ const Hero = () => {
                 }}
               />
               <motion.div 
-                className="floating-element element-3"
+                className={`floating-element element-3`}
                 animate={{
                   x: [0, 10, 0],
                   y: [0, 10, 0],
