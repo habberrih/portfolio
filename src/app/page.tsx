@@ -1,25 +1,31 @@
-'use client';
+import { Navigation } from "@/components/navigation"
+import { HeroSection } from "@/components/hero-section"
+import { AboutSection } from "@/components/about-section"
+import { ExperienceSection } from "@/components/experience-section"
+import { ServicesSection } from "@/components/services-section"
+import { EducationSection } from "@/components/education-section"
+import { ProjectsSection } from "@/components/projects-section"
+import { NewsSection } from "@/components/news-section"
+import { ContactSection } from "@/components/contact-section"
+import { Footer } from "@/components/footer"
 
-import Header from '@/components/Header/Header';
-import Hero from '@/components/Hero/Hero';
-import About from '@/components/About/About';
-import Portfolio from '@/components/Portfolio/Portfolio';
-import Services from '@/components/Services/Services';
-import News from '@/components/News/News';
-import Contact from '@/components/Contact/Contact';
-import Footer from '@/components/Footer/Footer';
-
-export default function Page() {
+export default function Home() {
   return (
-    <div className="App">
-      <Header />
-      <Hero />
-      <About />
-      <Portfolio />
-      <Services />
-      <News />
-      <Contact />
+    <main className="relative overflow-x-hidden">
+      <Navigation />
+
+      <div className="space-y-0">
+        <HeroSection />
+        <AboutSection />
+        <ExperienceSection />
+        <ServicesSection />
+        <EducationSection />
+        <ProjectsSection />
+        <NewsSection />
+        <ContactSection />
+      </div>
+
       <Footer />
-    </div>
-  );
+    </main>
+  )
 }

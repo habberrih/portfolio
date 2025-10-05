@@ -1,70 +1,157 @@
-# Getting Started with Create React App
+# Abdullah Habberrih - Portfolio Website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A modern, responsive portfolio website showcasing my work as a Backend Developer with expertise in Node.js, NestJS, and PostgreSQL. Built with Next.js 15, TypeScript, and Tailwind CSS.
 
-## Available Scripts
+## ✨ Features
 
-In the project directory, you can run:
+- **Modern Design**: Clean, professional aesthetic inspired by essam.ly with warm beige color scheme
+- **Responsive Layout**: Fully responsive design that works seamlessly across all devices
+- **Smooth Animations**: Framer Motion animations for engaging user experience
+- **Dark/Light Mode**: Theme toggle for user preference
+- **Interactive Sections**:
+  - Hero section with typing animation cycling through roles
+  - About section with stats, skills progress bars, and tech stack
+  - Experience timeline with alternating card layout
+  - Services showcase with hover effects
+  - Education section with publications subsection
+  - Projects gallery with filterable categories and detailed modal views
+  - News/Updates section with category filters
+  - Contact form with validation
+- **SEO Optimized**: Built with Next.js for optimal performance and SEO
 
-### `npm start`
+## 🛠️ Tech Stack
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Framework**: Next.js 15 (App Router)
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS v4
+- **UI Components**: shadcn/ui
+- **Animations**: Framer Motion
+- **Icons**: Lucide React
+- **Font**: Geist Sans & Geist Mono
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 📦 Installation
 
-### `npm test`
+1. Clone the repository:
+\`\`\`bash
+git clone https://github.com/yourusername/portfolio.git
+cd portfolio
+\`\`\`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+2. Install dependencies:
+\`\`\`bash
+npm install
+# or
+yarn install
+# or
+pnpm install
+\`\`\`
 
-### `npm run build`
+3. Run the development server:
+\`\`\`bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+\`\`\`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+4. Open [http://localhost:3000](http://localhost:3000) in your browser to see the result.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 🚀 Deployment
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Deploy to Vercel
 
-### `npm run eject`
+The easiest way to deploy this portfolio is using [Vercel](https://vercel.com):
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/yourusername/portfolio)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. Push your code to GitHub
+2. Import your repository to Vercel
+3. Vercel will automatically detect Next.js and configure the build settings
+4. Click "Deploy"
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Build for Production
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+\`\`\`bash
+npm run build
+npm run start
+\`\`\`
 
-## Learn More
+## 📁 Project Structure
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+\`\`\`
+portfolio/
+├── src/
+│   ├── app/
+│   │   ├── layout.tsx          # Root layout with theme provider
+│   │   ├── page.tsx            # Main page with all sections
+│   │   └── globals.css         # Global styles and design tokens
+│   ├── components/
+│   │   ├── ui/                 # shadcn/ui components
+│   │   ├── navigation.tsx      # Navigation bar with smooth scroll
+│   │   ├── hero-section.tsx    # Hero with typing animation
+│   │   ├── about-section.tsx   # About with stats and skills
+│   │   ├── experience-section.tsx  # Work experience timeline
+│   │   ├── services-section.tsx    # Services showcase
+│   │   ├── education-section.tsx   # Education and publications
+│   │   ├── projects-section.tsx    # Projects gallery with filters
+│   │   ├── news-section.tsx    # News/updates section
+│   │   ├── contact-section.tsx # Contact form
+│   │   ├── footer.tsx          # Footer with links
+│   │   └── theme-provider.tsx  # Theme context provider
+│   ├── hooks/                  # Custom React hooks
+│   └── lib/                    # Utility functions
+├── public/                     # Static assets (images)
+├── tsconfig.json               # TypeScript configuration
+├── components.json             # shadcn/ui configuration
+└── package.json
+\`\`\`
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 🎨 Customization
 
-### Code Splitting
+### Colors
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Update the design tokens in `src/app/globals.css`:
 
-### Analyzing the Bundle Size
+\`\`\`css
+@theme inline {
+  --color-primary: #3B82F6;
+  --color-accent: #F59E0B;
+  /* ... other colors */
+}
+\`\`\`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Content
 
-### Making a Progressive Web App
+Update the content in each section component:
+- Personal info: `src/components/hero-section.tsx`, `src/components/about-section.tsx`
+- Work experience: `src/components/experience-section.tsx`
+- Projects: `src/components/projects-section.tsx`
+- Education: `src/components/education-section.tsx`
+- Contact info: `src/components/contact-section.tsx`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### Images
 
-### Advanced Configuration
+Replace placeholder images in the `public/` directory with your own images.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## 📧 Contact
 
-### Deployment
+- **Email**: a.habberreh@gmail.com
+- **Phone**: +218 643 65 26
+- **Location**: Rome, Italy
+- **LinkedIn**: [Abdullah Habberrih](https://linkedin.com/in/abdullah-habberrih)
+- **GitHub**: [Abdullah Habberrih](https://github.com/abdullah-habberrih)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## 📄 License
 
-### `npm run build` fails to minify
+This project is open source and available under the [MIT License](LICENSE).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## 🙏 Acknowledgments
+
+- Design inspiration from [essam.ly](https://essam.ly)
+- UI components from [shadcn/ui](https://ui.shadcn.com)
+- Icons from [Lucide](https://lucide.dev)
+
+---
+
+Built with ❤️ by Abdullah Habberrih
