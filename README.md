@@ -32,28 +32,23 @@ A modern, responsive portfolio website showcasing my work as a Backend Developer
 ## 📦 Installation
 
 1. Clone the repository:
-\`\`\`bash
+
+```bash
 git clone https://github.com/yourusername/portfolio.git
 cd portfolio
-\`\`\`
+```
 
 2. Install dependencies:
-\`\`\`bash
+
+```bash
 npm install
-# or
-yarn install
-# or
-pnpm install
-\`\`\`
+```
 
 3. Run the development server:
-\`\`\`bash
+
+```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-\`\`\`
+```
 
 4. Open [http://localhost:3000](http://localhost:3000) in your browser to see the result.
 
@@ -72,14 +67,14 @@ The easiest way to deploy this portfolio is using [Vercel](https://vercel.com):
 
 ### Build for Production
 
-\`\`\`bash
+```bash
 npm run build
 npm run start
-\`\`\`
+```
 
 ## 📁 Project Structure
 
-\`\`\`
+```
 portfolio/
 ├── src/
 │   ├── app/
@@ -105,7 +100,7 @@ portfolio/
 ├── tsconfig.json               # TypeScript configuration
 ├── components.json             # shadcn/ui configuration
 └── package.json
-\`\`\`
+```
 
 ## 🎨 Customization
 
@@ -113,17 +108,18 @@ portfolio/
 
 Update the design tokens in `src/app/globals.css`:
 
-\`\`\`css
+```css
 @theme inline {
-  --color-primary: #3B82F6;
-  --color-accent: #F59E0B;
+  --color-primary: #3b82f6;
+  --color-accent: #f59e0b;
   /* ... other colors */
 }
-\`\`\`
+```
 
 ### Content
 
 Update the content in each section component:
+
 - Personal info: `src/components/hero-section.tsx`, `src/components/about-section.tsx`
 - Work experience: `src/components/experience-section.tsx`
 - Projects: `src/components/projects-section.tsx`
@@ -145,12 +141,6 @@ Replace placeholder images in the `public/` directory with your own images.
 ## 📄 License
 
 This project is open source and available under the [MIT License](LICENSE).
-
-## 🙏 Acknowledgments
-
-- Design inspiration from [essam.ly](https://essam.ly)
-- UI components from [shadcn/ui](https://ui.shadcn.com)
-- Icons from [Lucide](https://lucide.dev)
 
 ---
 
