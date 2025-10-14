@@ -1,51 +1,54 @@
-"use client"
+'use client';
 
-import * as React from "react"
-import { Button } from "@/components/ui/button"
-import { ThemeToggle } from "@/components/theme-toggle"
-import { Code2 } from "lucide-react"
+import * as React from 'react';
+import { Button } from '@/components/ui/button';
+import { ThemeToggle } from '@/components/theme-toggle';
+import { Code2 } from 'lucide-react';
 
 const navItems = [
-  { name: "Home", href: "#hero" },
-  { name: "About", href: "#about" },
-  { name: "Experience", href: "#experience" },
-  { name: "Services", href: "#services" },
-  { name: "Education", href: "#education" },
-  { name: "Projects", href: "#projects" },
-  { name: "News", href: "#news" },
-  { name: "Contact", href: "#contact" },
-]
+  { name: 'Home', href: '#hero' },
+  { name: 'About', href: '#about' },
+  { name: 'Experience', href: '#experience' },
+  { name: 'Services', href: '#services' },
+  { name: 'Education', href: '#education' },
+  { name: 'Projects', href: '#projects' },
+  { name: 'News', href: '#news' },
+  { name: 'Contact', href: '#contact' },
+];
 
 export function Navigation() {
-  const [activeSection, setActiveSection] = React.useState("hero")
+  const [activeSection, setActiveSection] = React.useState('hero');
 
   React.useEffect(() => {
     const handleScroll = () => {
-      const sections = navItems.map((item) => item.href.slice(1))
-      const scrollPosition = window.scrollY + 100
+      const sections = navItems.map((item) => item.href.slice(1));
+      const scrollPosition = window.scrollY + 100;
 
       for (const section of sections) {
-        const element = document.getElementById(section)
+        const element = document.getElementById(section);
         if (element) {
-          const { offsetTop, offsetHeight } = element
-          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
-            setActiveSection(section)
-            break
+          const { offsetTop, offsetHeight } = element;
+          if (
+            scrollPosition >= offsetTop &&
+            scrollPosition < offsetTop + offsetHeight
+          ) {
+            setActiveSection(section);
+            break;
           }
         }
       }
-    }
+    };
 
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const scrollToSection = (href: string) => {
-    const element = document.querySelector(href)
+    const element = document.querySelector(href);
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" })
+      element.scrollIntoView({ behavior: 'smooth' });
     }
-  }
+  };
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border/50">
@@ -55,8 +58,8 @@ export function Navigation() {
             href="#hero"
             className="flex items-center gap-2 font-semibold text-lg"
             onClick={(e) => {
-              e.preventDefault()
-              scrollToSection("#hero")
+              e.preventDefault();
+              scrollToSection('#hero');
             }}
           >
             <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center">
@@ -72,8 +75,8 @@ export function Navigation() {
                 onClick={() => scrollToSection(item.href)}
                 className={`px-4 py-2 text-sm font-medium rounded-md transition-colors ${
                   activeSection === item.href.slice(1)
-                    ? "text-primary bg-primary/10"
-                    : "text-muted-foreground hover:text-foreground hover:bg-muted"
+                    ? 'text-primary bg-primary/10'
+                    : 'text-muted-foreground hover:text-foreground hover:bg-muted'
                 }`}
               >
                 {item.name}
@@ -82,13 +85,20 @@ export function Navigation() {
           </div>
 
           <div className="flex items-center gap-2">
-            <Button asChild variant="outline" size="sm" className="hidden sm:flex bg-transparent">
-              <a href="mailto:a.habberreh@gmail.com">Download CV</a>
+            <Button
+              asChild
+              variant="outline"
+              size="sm"
+              className="hidden sm:flex bg-transparent"
+            >
+              <a href="/resume/habberrih-resume.pdf" download>
+                Download CV
+              </a>
             </Button>
             <ThemeToggle />
           </div>
         </div>
       </div>
     </nav>
-  )
+  );
 }
