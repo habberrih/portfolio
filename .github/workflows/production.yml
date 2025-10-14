@@ -47,9 +47,9 @@ jobs:
       - name: Prepare public assets
         run: |
           mkdir -p public/me public/projects public/news
-          rsync -a --delete private_assets/me/ public/me/
-          rsync -a --delete private_assets/projects/ public/projects/
-          rsync -a --delete private_assets/news/ public/news/
+          rsync -a --delete --ignore-missing-args private_assets/me/       public/me/
+          rsync -a --delete --ignore-missing-args private_assets/projects/ public/projects/
+          rsync -a --delete --ignore-missing-args private_assets/news/     public/news/
 
       - name: Install Vercel CLI
         run: npm install --global vercel@latest
