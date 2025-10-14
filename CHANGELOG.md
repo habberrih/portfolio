@@ -1,0 +1,27 @@
+# Changelog
+
+## 1.0.0 (2025-10-14)
+
+
+### Features
+
+* add dependencies label for version updates ([5aabcca](https://github.com/habberrih/portfolio/commit/5aabcca004923d0b7f2c692b512b45833f72a523))
+* add GitHub Actions workflow for automated release management ([3c9ab11](https://github.com/habberrih/portfolio/commit/3c9ab1196d126591f78f7614480cf6a1d5dbdd0c))
+* add GitHub Actions workflow for Vercel production deployment ([b547bcb](https://github.com/habberrih/portfolio/commit/b547bcbf34e69c9f1757b7c5e64b0dfefcb4f99a))
+* add initial Next.js configuration file ([d7cf2e0](https://github.com/habberrih/portfolio/commit/d7cf2e04492fc457d826d7301953d5c862517881))
+* add layout and global styles for the application ([9265e82](https://github.com/habberrih/portfolio/commit/9265e820ae32bb18a8a93aec663403a95e56ff25))
+* add logo image for branding ([bffa1f7](https://github.com/habberrih/portfolio/commit/bffa1f7a0c9c813e1b00c8319d43f838bf84b89e))
+* add main Page component with layout structure ([ae7f620](https://github.com/habberrih/portfolio/commit/ae7f620967b145dd76598580f2e422991c1d9f6b))
+* add nginx entrypoint script for automatic certificate reloads ([d0c361f](https://github.com/habberrih/portfolio/commit/d0c361f458679490f9f2145c15b5a9cc8cb4ff7d))
+* add tsconfig.json for TypeScript configuration ([2387f3a](https://github.com/habberrih/portfolio/commit/2387f3ae7d12b9f295beedb8d597b0e3ac689070))
+* add TypeScript and type definitions to package.json and package-lock.json ([7361f28](https://github.com/habberrih/portfolio/commit/7361f28af5fd9429a2b222f5310a9c58895d2b3e))
+* add TypeScript environment definitions for Next.js ([cf25a44](https://github.com/habberrih/portfolio/commit/cf25a44c654882f400b18bc3664012a217bc58ff))
+* add UI components for spinner, switch, table, tabs, textarea, toast, toaster, toggle group, and tooltip ([f960f33](https://github.com/habberrih/portfolio/commit/f960f336ffcc23dedfeaedb8f8560ac0471c90c4))
+* create RootLayout component with metadata and styles ([3d706cc](https://github.com/habberrih/portfolio/commit/3d706cc4bc524c9a3478df6642107f5e137d7fe0))
+* implement image loader function to categorize images by ID ([393bd36](https://github.com/habberrih/portfolio/commit/393bd36e683050eee11d872eafbb55e668d4622d))
+
+
+### Bug Fixes
+
+* add --ignore-missing-args flag to rsync commands for asset preparation ([6c2c2dc](https://github.com/habberrih/portfolio/commit/6c2c2dce0a432f6f8c09a1037a7ae16ac8f8c3fd))
+* update project name to habberrih-portfolio in package.json ([55fb44b](https://github.com/habberrih/portfolio/commit/55fb44b600a21f170b156b31223e6a659ffe588c))
