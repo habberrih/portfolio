@@ -46,10 +46,22 @@ jobs:
       # rsync -a --delete private_assets/ public/
       - name: Prepare public assets
         run: |
-          mkdir -p public/me public/projects public/news
-          rsync -a --delete --ignore-missing-args private_assets/me/       public/me/
-          rsync -a --delete --ignore-missing-args private_assets/projects/ public/projects/
-          rsync -a --delete --ignore-missing-args private_assets/news/     public/news/
+          sync_dir () {
+            src="$1"; dest="$2"
+            mkdir -p "$dest"
+            if [ -d "$src" ]; then
+              rsync -a --delete "$src"/ "$dest"/
+              echo "✅ Synced $src -> $dest"
+            else
+              # Source missing: keep dest but empty (similar to --delete)
+              find "$dest" -mindepth 1 -maxdepth 1 -exec rm -rf {} + || true
+              echo "⚠️  $src missing; cleaned $dest"
+            fi
+          }
+
+          sync_dir private_assets/me       public/me
+          sync_dir private_assets/projects public/projects
+          sync_dir private_assets/news     public/news
 
       - name: Install Vercel CLI
         run: npm install --global vercel@latest
