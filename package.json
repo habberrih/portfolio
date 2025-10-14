@@ -1,7 +1,10 @@
 {
-  "name": "my-v0-project",
+  "name": "portfolio",
   "version": "1.0.0",
   "private": true,
+  "author": "habberrih",
+  "license": "MIT",
+  "description": "My personal portfolio website built with Next.js and Tailwind CSS.",
   "scripts": {
     "build": "next build",
     "dev": "next dev  --turbopack",
