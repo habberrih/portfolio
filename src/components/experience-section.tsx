@@ -1,26 +1,29 @@
-"use client"
+'use client';
 
-import { motion } from "framer-motion"
-import { Briefcase, Calendar } from "lucide-react"
+import { motion } from 'framer-motion';
+import { Briefcase, Calendar } from 'lucide-react';
 
 const experiences = [
   {
-    title: "Backend Developer",
-    company: "Lamah",
-    period: "2022 — Present",
+    title: 'Backend Developer',
+    company: 'Lamah',
+    period: '2022 — Present',
     description: [
-      "Built REST APIs with NestJS & Node.js",
-      "Containerized services using Docker and integrated CI/CD pipelines",
-      "Worked with PostgreSQL, MongoDB, and E2E testing (Jest)",
+      'Built REST APIs with NestJS & Node.js',
+      'Containerized services using Docker and integrated CI/CD pipelines',
+      'Worked with PostgreSQL, MongoDB, and E2E testing (Jest)',
     ],
   },
   {
-    title: "R&D Programmer",
-    company: "Lamah",
-    period: "2024",
-    description: ["Built IoT-based systems with ESP8266 and C++", "Automated deployments with Terraform & Jenkins"],
+    title: 'R&D Programmer',
+    company: 'Lamah',
+    period: '2024',
+    description: [
+      'Built IoT-based systems with ESP8266 and C++',
+      'Automated deployments with Terraform & Jenkins',
+    ],
   },
-]
+];
 
 export function ExperienceSection() {
   return (
@@ -43,7 +46,8 @@ export function ExperienceSection() {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="text-lg text-foreground/70 max-w-2xl mx-auto"
           >
-            My professional journey and the roles I've taken on throughout my career
+            My professional journey and the roles I've taken on throughout my
+            career
           </motion.p>
         </div>
 
@@ -60,7 +64,7 @@ export function ExperienceSection() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.2 }}
                 className={`relative flex flex-col md:flex-row gap-8 ${
-                  index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
+                  index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
                 }`}
               >
                 {/* Timeline dot */}
@@ -69,7 +73,10 @@ export function ExperienceSection() {
                 {/* Content card */}
                 <div className="md:w-[calc(50%-2rem)]">
                   <motion.div
-                    whileHover={{ y: -5, shadow: "0 20px 40px rgba(0,0,0,0.1)" }}
+                    whileHover={{
+                      y: -5,
+                      shadow: '0 20px 40px rgba(0,0,0,0.1)',
+                    }}
                     transition={{ duration: 0.3 }}
                     className="bg-white rounded-xl p-8 shadow-md hover:shadow-xl transition-all"
                   >
@@ -80,7 +87,9 @@ export function ExperienceSection() {
                     </div>
 
                     {/* Title */}
-                    <h3 className="text-2xl font-bold mb-3 text-foreground">{exp.title}</h3>
+                    <h3 className="text-2xl font-bold mb-3 text-foreground">
+                      {exp.title}
+                    </h3>
 
                     {/* Period */}
                     <div className="flex items-center gap-2 text-foreground/60 mb-6">
@@ -92,7 +101,9 @@ export function ExperienceSection() {
                     <ul className="space-y-3">
                       {exp.description.map((item, i) => (
                         <li key={i} className="flex gap-3 text-foreground/70">
-                          <span className="text-primary mt-1 flex-shrink-0">•</span>
+                          <span className="text-primary mt-1 flex-shrink-0">
+                            •
+                          </span>
                           <span className="leading-relaxed">{item}</span>
                         </li>
                       ))}
@@ -108,5 +119,5 @@ export function ExperienceSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }
