@@ -3,7 +3,8 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
-import { Github, Linkedin, Mail } from 'lucide-react';
+import { Mail } from 'lucide-react';
+import { GitHubIcon, LinkedInIcon } from '@/components/icons/brand-icons';
 
 export function HeroSection() {
   const [typingText, setTypingText] = useState('');
@@ -130,8 +131,8 @@ export function HeroSection() {
               className="flex items-center gap-5 pt-2"
             >
               {[
-                { url: 'https://github.com/habberrih', icon: Github },
-                { url: 'https://linkedin.com/in/habberrih', icon: Linkedin },
+                { url: 'https://github.com/habberrih', icon: GitHubIcon },
+                { url: 'https://linkedin.com/in/habberrih', icon: LinkedInIcon },
                 { url: 'mailto:a.habberreh@gmail.com', icon: Mail },
               ].map((social, index) => {
                 const Icon = social.icon;
