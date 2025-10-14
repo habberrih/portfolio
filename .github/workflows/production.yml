@@ -62,6 +62,7 @@ jobs:
           sync_dir private_assets/me       public/me
           sync_dir private_assets/projects public/projects
           sync_dir private_assets/news     public/news
+          sync_dir private_assets/resume   public/resume
 
       - name: Install Vercel CLI
         run: npm install --global vercel@latest

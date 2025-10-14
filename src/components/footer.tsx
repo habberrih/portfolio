@@ -1,27 +1,45 @@
-"use client"
+'use client';
 
-import { motion } from "framer-motion"
-import { Github, Linkedin, Youtube, Twitter, Globe } from "lucide-react"
+import { motion } from 'framer-motion';
+import { Globe } from 'lucide-react';
+import {
+  GitHubIcon,
+  LinkedInIcon,
+  ResearchGateIcon,
+  OrcidIcon,
+} from '@/components/icons/brand-icons';
 
 export function Footer() {
-  const currentYear = new Date().getFullYear()
+  const currentYear = new Date().getFullYear();
 
   const quickLinks = [
-    { name: "Home", href: "#home" },
-    { name: "About", href: "#about" },
-    { name: "Experience", href: "#experience" },
-    { name: "Skills", href: "#skills" },
-    { name: "News", href: "#news" },
-    { name: "Contact", href: "#contact" },
-  ]
+    { name: 'Home', href: '#home' },
+    { name: 'About', href: '#about' },
+    { name: 'Experience', href: '#experience' },
+    { name: 'Skills', href: '#skills' },
+    { name: 'News', href: '#news' },
+    { name: 'Contact', href: '#contact' },
+  ];
 
   const socialLinks = [
-    { icon: Github, href: "https://github.com/habberrih", label: "GitHub" },
-    { icon: Linkedin, href: "https://linkedin.com/in/habberrih", label: "LinkedIn" },
-    { icon: Youtube, href: "https://www.researchgate.net/profile/Abdullah-Habberrih", label: "ResearchGate" },
-    { icon: Twitter, href: "https://orcid.org/", label: "ORCID" },
-    { icon: Globe, href: "https://habberrih.ly", label: "Website" },
-  ]
+    { icon: GitHubIcon, href: 'https://github.com/habberrih', label: 'GitHub' },
+    {
+      icon: LinkedInIcon,
+      href: 'https://linkedin.com/in/habberrih',
+      label: 'LinkedIn',
+    },
+    {
+      icon: ResearchGateIcon,
+      href: 'https://www.researchgate.net/profile/Abdullah-Habberrih',
+      label: 'ResearchGate',
+    },
+    {
+      icon: OrcidIcon,
+      href: 'https://orcid.org/0009-0004-2879-1817',
+      label: 'ORCID',
+    },
+    { icon: Globe, href: 'https://habberrih.ly', label: 'Website' },
+  ];
 
   return (
     <footer className="bg-[#2C2416] text-white">
@@ -37,7 +55,9 @@ export function Footer() {
             className="text-center md:text-left md:col-span-2 lg:col-span-1"
           >
             <h3 className="text-2xl font-bold mb-3">Abdullah Habberrih</h3>
-            <p className="text-white/70 leading-relaxed">AI & NLP Researcher | Backend & IoT Developer</p>
+            <p className="text-white/70 leading-relaxed">
+              AI & NLP Researcher | Backend & IoT Developer
+            </p>
           </motion.div>
 
           {/* Quick Links */}
@@ -105,9 +125,11 @@ export function Footer() {
           transition={{ duration: 0.5, delay: 0.3 }}
           className="pt-6 border-t border-white/10 text-center"
         >
-          <p className="text-white/70 text-sm">© {currentYear} Abdullah Habberrih. All Rights Reserved.</p>
+          <p className="text-white/70 text-sm">
+            © {currentYear} Abdullah Habberrih. All Rights Reserved.
+          </p>
         </motion.div>
       </div>
     </footer>
-  )
+  );
 }
