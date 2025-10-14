@@ -1,5 +1,16 @@
 # Changelog
 
+## [1.1.0](https://github.com/habberrih/portfolio/compare/v1.0.0...v1.1.0) (2025-10-14)
+
+
+### Features
+
+* add brand icons for GitHub, LinkedIn, ResearchGate, and ORCID ([135a0f4](https://github.com/habberrih/portfolio/commit/135a0f4103d455b3cf509d00a222ae25485c10a9))
+* add sync for resume directory in production deployment workflow ([2fd7265](https://github.com/habberrih/portfolio/commit/2fd726590a2823f647b5ff97f0aca9fd3c59d569))
+* replace Github icon with custom GitHubIcon in ProjectsSection ([3561ee5](https://github.com/habberrih/portfolio/commit/3561ee50ac9eb57842e15f6583945e6bf7716d32))
+* replace Lucide icons with custom GitHubIcon and LinkedInIcon in HeroSection ([82ea3a9](https://github.com/habberrih/portfolio/commit/82ea3a9b02fe3c4ed5fd789c92cc46bb6514dbed))
+* update Footer component to use custom brand icons and improve formatting ([cda43a7](https://github.com/habberrih/portfolio/commit/cda43a7656a82980dbbe2bdef61b5fb1c1d4ebbe))
+
 ## 1.0.0 (2025-10-14)
 
 
