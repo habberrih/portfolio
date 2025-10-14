@@ -1,53 +1,53 @@
-"use client"
+'use client';
 
-import { useState, useEffect } from "react"
-import { motion } from "framer-motion"
-import { Button } from "@/components/ui/button"
-import { Github, Linkedin, Mail } from "lucide-react"
+import { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
+import { Button } from '@/components/ui/button';
+import { Github, Linkedin, Mail } from 'lucide-react';
 
 export function HeroSection() {
-  const [typingText, setTypingText] = useState("")
-  const [typingIndex, setTypingIndex] = useState(0)
-  const [showCursor, setShowCursor] = useState(true)
-  const roles = ["Backend Developer", "API Architect", "IoT Developer"]
-  const [currentRoleIndex, setCurrentRoleIndex] = useState(0)
+  const [typingText, setTypingText] = useState('');
+  const [typingIndex, setTypingIndex] = useState(0);
+  const [showCursor, setShowCursor] = useState(true);
+  const roles = ['Backend Developer', 'API Architect', 'IoT Developer'];
+  const [currentRoleIndex, setCurrentRoleIndex] = useState(0);
 
   useEffect(() => {
-    const currentRole = roles[currentRoleIndex]
+    const currentRole = roles[currentRoleIndex];
 
     if (typingIndex < currentRole.length) {
       const timeout = setTimeout(() => {
-        setTypingText((prev) => prev + currentRole[typingIndex])
-        setTypingIndex((prev) => prev + 1)
-      }, 100)
+        setTypingText((prev) => prev + currentRole[typingIndex]);
+        setTypingIndex((prev) => prev + 1);
+      }, 100);
 
-      return () => clearTimeout(timeout)
+      return () => clearTimeout(timeout);
     } else {
       const timeout = setTimeout(() => {
         const eraseInterval = setInterval(() => {
-          setTypingText((prev) => prev.substring(0, prev.length - 1))
+          setTypingText((prev) => prev.substring(0, prev.length - 1));
 
           if (typingText.length <= 1) {
-            clearInterval(eraseInterval)
-            setTypingIndex(0)
-            setCurrentRoleIndex((prev) => (prev + 1) % roles.length)
+            clearInterval(eraseInterval);
+            setTypingIndex(0);
+            setCurrentRoleIndex((prev) => (prev + 1) % roles.length);
           }
-        }, 50)
+        }, 50);
 
-        return () => clearInterval(eraseInterval)
-      }, 2000)
+        return () => clearInterval(eraseInterval);
+      }, 2000);
 
-      return () => clearTimeout(timeout)
+      return () => clearTimeout(timeout);
     }
-  }, [typingIndex, currentRoleIndex, typingText, roles])
+  }, [typingIndex, currentRoleIndex, typingText, roles]);
 
   useEffect(() => {
     const cursorInterval = setInterval(() => {
-      setShowCursor((prev) => !prev)
-    }, 500)
+      setShowCursor((prev) => !prev);
+    }, 500);
 
-    return () => clearInterval(cursorInterval)
-  }, [])
+    return () => clearInterval(cursorInterval);
+  }, []);
 
   return (
     <section
@@ -77,7 +77,7 @@ export function HeroSection() {
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{
-                type: "spring",
+                type: 'spring',
                 stiffness: 200,
                 delay: 0.4,
                 duration: 0.8,
@@ -90,7 +90,11 @@ export function HeroSection() {
             <div className="h-12 flex items-center">
               <motion.h2 className="text-3xl md:text-4xl font-medium text-primary">
                 {typingText}
-                <span className={`inline-block ml-1 ${showCursor ? "opacity-100" : "opacity-0"} transition-opacity`}>
+                <span
+                  className={`inline-block ml-1 ${
+                    showCursor ? 'opacity-100' : 'opacity-0'
+                  } transition-opacity`}
+                >
                   |
                 </span>
               </motion.h2>
@@ -102,8 +106,10 @@ export function HeroSection() {
               transition={{ duration: 0.5, delay: 0.8 }}
               className="text-lg text-muted-foreground leading-relaxed max-w-xl"
             >
-              A Computer Science Graduate with expertise in backend development and IoT solutions. I specialize in
-              building robust APIs, scalable systems, and innovative IoT applications using Node.js, NestJS, and Docker.
+              A Computer Science Graduate with expertise in backend development
+              and IoT solutions. I specialize in building robust APIs, scalable
+              systems, and innovative IoT applications using Node.js, NestJS,
+              and Docker.
             </motion.p>
 
             <motion.div
@@ -124,11 +130,11 @@ export function HeroSection() {
               className="flex items-center gap-5 pt-2"
             >
               {[
-                { url: "https://github.com/habberrih", icon: Github },
-                { url: "https://linkedin.com/in/habberrih", icon: Linkedin },
-                { url: "mailto:a.habberreh@gmail.com", icon: Mail },
+                { url: 'https://github.com/habberrih', icon: Github },
+                { url: 'https://linkedin.com/in/habberrih', icon: Linkedin },
+                { url: 'mailto:a.habberreh@gmail.com', icon: Mail },
               ].map((social, index) => {
-                const Icon = social.icon
+                const Icon = social.icon;
                 return (
                   <motion.a
                     key={index}
@@ -148,7 +154,7 @@ export function HeroSection() {
                     <Icon className="w-5 h-5 relative z-10" />
                     <span className="absolute inset-0 rounded-full bg-white/30 scale-0 group-hover:scale-100 transition-transform duration-300" />
                   </motion.a>
-                )
+                );
               })}
             </motion.div>
           </motion.div>
@@ -169,7 +175,7 @@ export function HeroSection() {
                 className="w-full h-full rounded-full bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center overflow-hidden shadow-2xl"
               >
                 <img
-                  src="/professional-backend-developer-portrait.jpg"
+                  src="/me/1.png"
                   alt="Abdullah Habberrih"
                   className="w-full h-full object-cover"
                 />
@@ -184,7 +190,7 @@ export function HeroSection() {
                 transition={{
                   duration: 7,
                   repeat: Number.POSITIVE_INFINITY,
-                  repeatType: "reverse",
+                  repeatType: 'reverse',
                 }}
                 className="absolute top-[20%] right-[15%] w-20 h-20 rounded-full bg-primary/20 opacity-60"
               />
@@ -198,7 +204,7 @@ export function HeroSection() {
                 transition={{
                   duration: 5,
                   repeat: Number.POSITIVE_INFINITY,
-                  repeatType: "reverse",
+                  repeatType: 'reverse',
                 }}
                 className="absolute bottom-[20%] left-[15%] w-16 h-16 rounded-full bg-primary/15 opacity-60"
               />
@@ -212,7 +218,7 @@ export function HeroSection() {
                 transition={{
                   duration: 6,
                   repeat: Number.POSITIVE_INFINITY,
-                  repeatType: "reverse",
+                  repeatType: 'reverse',
                 }}
                 className="absolute top-[60%] right-[25%] w-10 h-10 rounded-full bg-primary/10 opacity-60"
               />
@@ -221,5 +227,5 @@ export function HeroSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }

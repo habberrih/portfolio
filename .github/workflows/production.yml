@@ -1,26 +1,64 @@
 name: GitHub Actions Vercel Production Deployment
+
 permissions:
   contents: read
   pull-requests: write
+
 env:
   VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
   VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
   SMTP_USER: ${{ secrets.SMTP_USER }}
   SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
+
 on:
   push:
     branches:
       - main
+
 jobs:
   Deploy-Production:
+    concurrency:
+      group: production
+      cancel-in-progress: true
+
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v5
+      - name: Checkout public repo
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Configure SSH for private assets
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.ASSETS_DEPLOY_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          touch ~/.ssh/known_hosts
+          ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
+
+      - name: Checkout private assets (SSH)
+        run: |
+          git clone --depth 1 git@github.com:habberrih/portfolio-assets.git private_assets
+
+      # If you want to copy everything from private_assets to public, use:
+      # rsync -a --delete private_assets/ public/
+      - name: Prepare public assets
+        run: |
+          mkdir -p public/me public/projects public/news
+          rsync -a --delete private_assets/me/ public/me/
+          rsync -a --delete private_assets/projects/ public/projects/
+          rsync -a --delete private_assets/news/ public/news/
+
       - name: Install Vercel CLI
         run: npm install --global vercel@latest
+
       - name: Pull Vercel Environment Information
         run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
+
       - name: Build Project Artifacts
         run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}
+
       - name: Deploy Project Artifacts to Vercel
         run: vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }}
