@@ -128,7 +128,20 @@ Update the content in each section component:
 
 ### Images
 
-Replace placeholder images in the `public/` directory with your own images.
+This project supports dynamic image loading from the `public/` folder for sections with image galleries.
+
+- News images: place under `public/news/<category>/<id>/...`
+  - Example: `public/news/award/2/01-hero.jpg`
+  - Categories: `award`, `volunteer`, `travel`
+- Project images: place under `public/projects/<category>/<id>/...`
+  - Example: `public/projects/node/2/01-screenshot.png`
+  - Categories: `dev-tools`, `automation`, `nest`, `node`, `iot`
+- Personal photos: store under `public/me/...` (e.g., `public/me/profile.jpg`)
+
+Notes
+- File names are sorted alphabetically; prefix with numbers to control order.
+- If a matching folder exists, its images override any statically defined `images`/`image` in the component data.
+- Supported extensions: .png, .jpg, .jpeg, .gif, .svg, .webp, .ico, .bmp, .tif, .tiff, .avif
 
 ## 📧 Contact
 
