@@ -1,36 +1,43 @@
-"use client"
+'use client';
 
-import { motion, useScroll, useTransform } from "framer-motion"
-import { Code2, Database, Server, Container, GitBranch, Workflow } from "lucide-react"
+import { motion, useScroll, useTransform } from 'framer-motion';
+import {
+  Code2,
+  Database,
+  Server,
+  Container,
+  GitBranch,
+  Workflow,
+} from 'lucide-react';
 
 export function AboutSection() {
-  const { scrollYProgress } = useScroll()
-  const scale = useTransform(scrollYProgress, [0, 1], [0.8, 1.2])
+  const { scrollYProgress } = useScroll();
+  const scale = useTransform(scrollYProgress, [0, 1], [0.8, 1.2]);
 
   const stats = [
-    { number: "3+", text: "Years of Experience" },
-    { number: "10+", text: "Projects Completed" },
-    { number: "5+", text: "Technologies Mastered" },
-  ]
+    { number: '3+', text: 'Years of Experience' },
+    { number: '10+', text: 'Projects Completed' },
+    { number: '5+', text: 'Technologies Mastered' },
+  ];
 
   const skills = [
-    { name: "NestJS / Node.js / Express", percentage: 95 },
-    { name: "JavaScript / TypeScript", percentage: 90 },
-    { name: "PostgreSQL / MongoDB", percentage: 85 },
-    { name: "Docker / CI/CD / DevOps", percentage: 80 },
-  ]
+    { name: 'NestJS / Node.js / Express', percentage: 95 },
+    { name: 'JavaScript / TypeScript', percentage: 90 },
+    { name: 'PostgreSQL / MongoDB', percentage: 85 },
+    { name: 'Docker / CI/CD / DevOps', percentage: 80 },
+  ];
 
   const technologies = [
-    { icon: Code2, name: "Node.js", color: "#68A063" },
-    { icon: Code2, name: "NestJS", color: "#E0234E" },
-    { icon: Code2, name: "TypeScript", color: "#3178C6" },
-    { icon: Database, name: "PostgreSQL", color: "#336791" },
-    { icon: Database, name: "MongoDB", color: "#47A248" },
-    { icon: Container, name: "Docker", color: "#2496ED" },
-    { icon: Server, name: "Express", color: "#000000" },
-    { icon: GitBranch, name: "Git", color: "#F05032" },
-    { icon: Workflow, name: "CI/CD", color: "#0066CC" },
-  ]
+    { icon: Code2, name: 'Node.js', color: '#68A063' },
+    { icon: Code2, name: 'NestJS', color: '#E0234E' },
+    { icon: Code2, name: 'TypeScript', color: '#3178C6' },
+    { icon: Database, name: 'PostgreSQL', color: '#336791' },
+    { icon: Database, name: 'MongoDB', color: '#47A248' },
+    { icon: Container, name: 'Docker', color: '#2496ED' },
+    { icon: Server, name: 'Express', color: '#000000' },
+    { icon: GitBranch, name: 'Git', color: '#F05032' },
+    { icon: Workflow, name: 'CI/CD', color: '#0066CC' },
+  ];
 
   return (
     <section id="about" className="py-24 px-6 bg-background">
@@ -45,8 +52,8 @@ export function AboutSection() {
           <motion.h2
             className="text-4xl md:text-5xl font-bold text-foreground"
             style={{ scale }}
-            whileHover={{ scale: 1.05, color: "hsl(var(--primary))" }}
-            transition={{ type: "spring", stiffness: 300 }}
+            whileHover={{ scale: 1.05, color: 'hsl(var(--primary))' }}
+            transition={{ type: 'spring', stiffness: 300 }}
           >
             About Me
           </motion.h2>
@@ -64,11 +71,15 @@ export function AboutSection() {
               className="w-full max-w-md aspect-square bg-muted rounded-2xl flex items-center justify-center text-muted-foreground text-xl shadow-lg"
               whileHover={{
                 scale: 1.05,
-                boxShadow: "0 20px 40px rgba(0, 0, 0, 0.15)",
+                boxShadow: '0 20px 40px rgba(0, 0, 0, 0.15)',
               }}
-              transition={{ type: "spring", stiffness: 300 }}
+              transition={{ type: 'spring', stiffness: 300 }}
             >
-              <motion.span initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5, duration: 0.5 }}>
+              <motion.span
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.5, duration: 0.5 }}
+              >
                 Your Photo
               </motion.span>
             </motion.div>
@@ -85,14 +96,19 @@ export function AboutSection() {
               Backend Developer with a Passion for Innovation
             </h3>
             <p className="text-lg leading-relaxed text-muted-foreground">
-              Hello there! I'm <span className="text-foreground font-semibold">Abdullah Habberrih</span>, a backend
-              developer with 3+ years of experience designing robust APIs using{" "}
-              <span className="text-foreground font-medium">Node.js</span>,{" "}
-              <span className="text-foreground font-medium">NestJS</span>, and{" "}
-              <span className="text-foreground font-medium">Express.js</span>. I'm passionate about performance,
-              scalability, and clean architecture. Currently working at{" "}
-              <span className="text-foreground font-semibold">Lamah</span>, where I develop API-driven and IoT-based
-              backend systems.
+              Hello there! I'm{' '}
+              <span className="text-foreground font-semibold">
+                Abdullah Habberrih
+              </span>
+              , a backend developer with 3+ years of experience designing robust
+              APIs using{' '}
+              <span className="text-foreground font-medium">Node.js</span>,{' '}
+              <span className="text-foreground font-medium">NestJS</span>, and{' '}
+              <span className="text-foreground font-medium">Express.js</span>.
+              I'm passionate about performance, scalability, and clean
+              architecture. Currently working at{' '}
+              <span className="text-foreground font-semibold">Lamah</span>,
+              where I develop API-driven backend systems.
             </p>
 
             <div className="grid grid-cols-3 gap-4 pt-4">
@@ -106,7 +122,7 @@ export function AboutSection() {
                   transition={{ delay: 0.2 * index, duration: 0.5 }}
                   whileHover={{
                     y: -10,
-                    boxShadow: "0 10px 25px rgba(0, 0, 0, 0.1)",
+                    boxShadow: '0 10px 25px rgba(0, 0, 0, 0.1)',
                   }}
                 >
                   <motion.h3
@@ -115,7 +131,7 @@ export function AboutSection() {
                     whileInView={{ scale: 1 }}
                     viewport={{ once: true }}
                     transition={{
-                      type: "spring",
+                      type: 'spring',
                       stiffness: 200,
                       delay: 0.3 + 0.1 * index,
                     }}
@@ -151,7 +167,7 @@ export function AboutSection() {
             whileInView={{ y: 0, opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            whileHover={{ color: "hsl(var(--primary))", x: 5 }}
+            whileHover={{ color: 'hsl(var(--primary))', x: 5 }}
           >
             Technical Skills & Expertise
           </motion.h3>
@@ -162,7 +178,8 @@ export function AboutSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
-            Here are the most important skills & technologies that I use in my work.
+            Here are the most important skills & technologies that I use in my
+            work.
           </motion.p>
 
           <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
@@ -174,7 +191,7 @@ export function AboutSection() {
                 whileInView={{ opacity: 1, y: 0, x: 0 }}
                 viewport={{ once: true }}
                 transition={{
-                  type: "spring",
+                  type: 'spring',
                   stiffness: 100,
                   delay: 0.1 * index,
                   duration: 0.6,
@@ -187,7 +204,7 @@ export function AboutSection() {
               >
                 <motion.h4
                   className="text-lg font-semibold mb-4 text-foreground"
-                  whileHover={{ color: "hsl(var(--primary))" }}
+                  whileHover={{ color: 'hsl(var(--primary))' }}
                 >
                   {skill.name}
                 </motion.h4>
@@ -217,14 +234,14 @@ export function AboutSection() {
             whileInView={{ y: 0, opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.3 }}
-            whileHover={{ color: "hsl(var(--primary))", x: 5 }}
+            whileHover={{ color: 'hsl(var(--primary))', x: 5 }}
           >
             Technologies & Tools
           </motion.h3>
 
           <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 max-w-4xl mx-auto">
             {technologies.map((tech, index) => {
-              const Icon = tech.icon
+              const Icon = tech.icon;
               return (
                 <motion.div
                   key={index}
@@ -233,7 +250,7 @@ export function AboutSection() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{
-                    type: "spring",
+                    type: 'spring',
                     stiffness: 100,
                     delay: 0.05 * index,
                     duration: 0.5,
@@ -245,14 +262,19 @@ export function AboutSection() {
                   }}
                 >
                   <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary to-primary/50 opacity-0 group-hover:opacity-100 transition-opacity" />
-                  <Icon className="w-12 h-12 mb-3 text-primary" strokeWidth={1.5} />
-                  <span className="text-sm font-semibold text-center text-foreground">{tech.name}</span>
+                  <Icon
+                    className="w-12 h-12 mb-3 text-primary"
+                    strokeWidth={1.5}
+                  />
+                  <span className="text-sm font-semibold text-center text-foreground">
+                    {tech.name}
+                  </span>
                 </motion.div>
-              )
+              );
             })}
           </div>
         </motion.div>
       </div>
     </section>
-  )
+  );
 }
