@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.1](https://github.com/habberrih/portfolio/compare/v1.1.0...v1.1.1) (2025-10-26)
+
+
+### Bug Fixes
+
+* replace photo placeholder with actual image in AboutSection ([4c4019c](https://github.com/habberrih/portfolio/commit/4c4019c162163b9e50d134b2232f79af936963af))
+
 ## [1.1.0](https://github.com/habberrih/portfolio/compare/v1.0.0...v1.1.0) (2025-10-14)
 
 
