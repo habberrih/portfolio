@@ -75,13 +75,14 @@ export function AboutSection() {
               }}
               transition={{ type: 'spring', stiffness: 300 }}
             >
-              <motion.span
+              <motion.img
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.5, duration: 0.5 }}
-              >
-                Your Photo
-              </motion.span>
+                src="/me/2.png"
+                alt="Abdullah Habberrih"
+                className="w-full h-full rounded-2xl object-cover"
+              />
             </motion.div>
           </motion.div>
 
