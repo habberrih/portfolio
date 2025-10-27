@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.2.0](https://github.com/habberrih/portfolio/compare/v1.1.1...v1.2.0) (2025-10-27)
+
+
+### Features
+
+* add GitHub Actions labeler configuration ([e6b6c8f](https://github.com/habberrih/portfolio/commit/e6b6c8fd4359468d89da0f24fac8ff7c314bc122))
+* add pull request labeler workflow ([9cd48e3](https://github.com/habberrih/portfolio/commit/9cd48e3bb40f151fbf3c87ad9aba29c5e13b8321))
+* add sync labels workflow ([f162c80](https://github.com/habberrih/portfolio/commit/f162c8028e91b2b1f1b2dc657145251b02000a12))
+
+
+### Bug Fixes
+
+* update sync labels workflow for consistency and functionality ([32e8e07](https://github.com/habberrih/portfolio/commit/32e8e07c51f720340bae716656cfe51d3dc2dbb6))
+
 ## [1.1.1](https://github.com/habberrih/portfolio/compare/v1.1.0...v1.1.1) (2025-10-26)
 
 
