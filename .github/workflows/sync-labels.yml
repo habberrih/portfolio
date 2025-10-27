@@ -1,0 +1,20 @@
+name: Sync labels
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - .github/labels.yml
+
+permissions:
+  issues: write
+  contents: read
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: peter-evans/create-or-update-labels@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          labels: .github/labels.yml
