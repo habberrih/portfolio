@@ -1,3 +1,31 @@
 - name: dependencies
   color: '0366d6'
-  description: 'Dependency version updates'
+  description: Dependency version updates
+
+- name: npm
+  color: '0e8a16'
+  description: npm-related changes
+
+- name: frontend
+  color: '1d76db'
+  description: Frontend code changes
+
+- name: ci
+  color: 'fbca04'
+  description: GitHub Actions / CI
+
+- name: config
+  color: 'c5def5'
+  description: Configuration files
+
+- name: styles
+  color: 'ffb6c1'
+  description: CSS/SCSS changes
+
+- name: docs
+  color: '0b5fff'
+  description: Documentation
+
+- name: tests
+  color: '5319e7'
+  description: Test code
