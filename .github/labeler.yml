@@ -1,0 +1,73 @@
+# Keep Dependabot tidy
+dependencies:
+  - created-by: dependabot[bot]
+  - title: '/^chore\(deps(.*)?\):/i'
+
+# npm-specific file touches (avoids "config" overlap)
+npm:
+  - changed-files:
+      - any-glob-to-any-file:
+          - 'package.json'
+          - 'package-lock.json'
+          - 'npm-shrinkwrap.json'
+          - '**/package.json'
+          - '**/package-lock.json'
+          - '**/npm-shrinkwrap.json'
+
+# Your existing buckets
+frontend:
+  - changed-files:
+      - any-glob-to-any-file:
+          - 'src/**'
+          - 'public/**'
+
+ci:
+  - changed-files:
+      - any-glob-to-any-file:
+          - '.github/workflows/**'
+
+# Narrow "config" so it doesn't grab package*.json
+# (explicit common config files instead of "*.json")
+config:
+  - changed-files:
+      - any-glob-to-any-file:
+          - '.eslintrc'
+          - '.eslintrc.*'
+          - '.prettierrc'
+          - '.prettierrc.*'
+          - 'tsconfig.json'
+          - 'tsconfig.*.json'
+          - 'vite.config.*'
+          - 'webpack.config.*'
+          - 'rollup.config.*'
+          - 'jest.config.*'
+          - 'babel.config.*'
+          - '*.config.js'
+          - '*.config.cjs'
+          - '*.config.mjs'
+          - '*.config.ts'
+          - '**/*.yml'
+          - '**/*.yaml'
+          - '**/*.mjs'
+          - '**/*.cjs'
+          - '**/*.ts'
+          - '**/*.js'
+
+styles:
+  - changed-files:
+      - any-glob-to-any-file:
+          - '**/*.css'
+          - '**/*.scss'
+
+docs:
+  - changed-files:
+      - any-glob-to-any-file:
+          - 'README.md'
+          - 'docs/**'
+          - 'CONTRIBUTING.md'
+          - 'CODE_OF_CONDUCT.md'
+
+tests:
+  - changed-files:
+      - any-glob-to-any-file:
+          - 'tests/**'
