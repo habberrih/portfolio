@@ -1,9 +1,12 @@
-name: Sync labels
+name: Sync Labels
+
 on:
-  workflow_dispatch:
   push:
+    branches:
+      - main
     paths:
       - .github/labels.yml
+  workflow_dispatch:
 
 permissions:
   issues: write
@@ -13,8 +16,12 @@ jobs:
   sync:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: peter-evans/create-or-update-labels@v4
+      - name: Checkout repository
+        uses: actions/checkout@v5
+
+      - name: Sync labels
+        uses: crazy-max/ghaction-github-labeler@v5
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          labels: .github/labels.yml
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          yaml-file: .github/labels.yml
+          prune: true
