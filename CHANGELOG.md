@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.2.1](https://github.com/habberrih/portfolio/compare/v1.2.0...v1.2.1) (2025-10-30)
+
+
+### Bug Fixes
+
+* remove color change on hover for About Me heading ([e962909](https://github.com/habberrih/portfolio/commit/e96290906b98a7371061ffda41dabb40f5cbcfd9))
+* update background and text colors for improved theme consistency in ExperienceSection component ([0ac1d87](https://github.com/habberrih/portfolio/commit/0ac1d8707a855fc16bf611cc4a3ea02b4b3e8ff7))
+* update background color in HeroSection for improved theme consistency ([fd00f94](https://github.com/habberrih/portfolio/commit/fd00f94c6b9118d832bab64b9847825a718a590a))
+* update background colors and enhance code consistency in ProjectsSection component ([0929cf7](https://github.com/habberrih/portfolio/commit/0929cf7ec5a3be211beeeefcd0c16a323e2d8f5d))
+* update background colors for improved theme consistency in NewsSection component ([9568273](https://github.com/habberrih/portfolio/commit/9568273fe4cedfd3648d373ce23cd0f5533a1b1b))
+* update footer component styles for improved theme consistency ([9ff8dc9](https://github.com/habberrih/portfolio/commit/9ff8dc9e36424b791b677a078b4b1d3aeedb261e))
+* update name in navigation to reflect correct branding ([23125db](https://github.com/habberrih/portfolio/commit/23125db4fe0dd83794920dc3b3588b10092fd599))
+
 ## [1.2.0](https://github.com/habberrih/portfolio/compare/v1.1.1...v1.2.0) (2025-10-27)
 
 
