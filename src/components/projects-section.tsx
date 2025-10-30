@@ -221,7 +221,10 @@ export function ProjectsSection({ imagesMap }: ProjectsSectionProps) {
       : enhancedProjects.filter((item) => item.category === filter);
 
   return (
-    <section id="projects" className="py-24 px-6 bg-white overflow-x-hidden">
+    <section
+      id="projects"
+      className="py-24 px-6 bg-background overflow-x-hidden"
+    >
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">My Projects</h2>
@@ -277,7 +280,7 @@ export function ProjectsSection({ imagesMap }: ProjectsSectionProps) {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 onClick={() => setSelectedProject(project)}
-                className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 cursor-pointer"
+                className="bg-card rounded-xl overflow-hidden shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 cursor-pointer"
               >
                 <div className="relative h-64 overflow-hidden">
                   <img
@@ -294,7 +297,7 @@ export function ProjectsSection({ imagesMap }: ProjectsSectionProps) {
                     {project.technologies.slice(0, 3).map((tech) => (
                       <span
                         key={tech}
-                        className="px-3 py-1 bg-[#F5F1E8] text-xs font-medium rounded-full"
+                        className="px-3 py-1 bg-secondary text-secondary-foreground text-xs font-medium rounded-full"
                       >
                         {tech}
                       </span>
@@ -327,11 +330,11 @@ export function ProjectsSection({ imagesMap }: ProjectsSectionProps) {
                 animate={{ scale: 1, opacity: 1 }}
                 exit={{ scale: 0.8, opacity: 0 }}
                 onClick={(e) => e.stopPropagation()}
-                className="bg-white rounded-xl w-full max-w-4xl max-h-[90vh] flex flex-col relative"
+                className="bg-card rounded-xl w-full max-w-4xl max-h-[90vh] flex flex-col relative"
               >
                 <button
                   onClick={() => setSelectedProject(null)}
-                  className="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/90 hover:bg-white flex items-center justify-center z-10 transition-all hover:rotate-90"
+                  className="absolute top-4 right-4 w-10 h-10 rounded-full bg-background/90 hover:bg-background flex items-center justify-center z-10 transition-all hover:rotate-90"
                 >
                   <X className="w-5 h-5" />
                 </button>
@@ -418,7 +421,7 @@ export function ProjectsSection({ imagesMap }: ProjectsSectionProps) {
                       {selectedProject.technologies.map((tech) => (
                         <span
                           key={tech}
-                          className="px-3 py-1.5 bg-[#F5F1E8] text-sm font-medium rounded-full"
+                          className="px-3 py-1.5 bg-secondary text-secondary-foreground text-sm font-medium rounded-full"
                         >
                           {tech}
                         </span>
@@ -432,7 +435,7 @@ export function ProjectsSection({ imagesMap }: ProjectsSectionProps) {
                             href={selectedProject.githubUrl}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-flex items-center gap-2 px-4 py-2 bg-[#2C1810] text-white rounded-lg hover:bg-[#3C2820] transition-colors"
+                            className="inline-flex items-center gap-2 px-4 py-2 bg-foreground text-background rounded-lg hover:bg-foreground/90 transition-colors"
                           >
                             <GitHubIcon className="w-4 h-4" />
                             View Code
@@ -456,7 +459,7 @@ export function ProjectsSection({ imagesMap }: ProjectsSectionProps) {
                       {selectedProject.fullDescription}
                     </p>
 
-                    <div className="mt-10 pt-8 border-t border-gray-200">
+                    <div className="mt-10 pt-8 border-t border-border">
                       <h3 className="text-2xl font-bold mb-4">Key Features</h3>
                       <ul className="ml-5 mb-8 space-y-2.5">
                         {selectedProject.features.map((feature, index) => (

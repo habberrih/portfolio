@@ -1,92 +1,94 @@
-"use client"
+'use client';
 
-import type React from "react"
+import type React from 'react';
 
-import { useState } from "react"
-import { motion } from "framer-motion"
-import { MapPin, Phone, Mail } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import { useState } from 'react';
+import { motion } from 'framer-motion';
+import { MapPin, Phone, Mail } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 
 type FormData = {
-  name: string
-  email: string
-  subject: string
-  message: string
-}
+  name: string;
+  email: string;
+  subject: string;
+  message: string;
+};
 
 type FormStatus = {
-  submitted: boolean
-  success: boolean
-  message: string
-}
+  submitted: boolean;
+  success: boolean;
+  message: string;
+};
 
 export function ContactSection() {
   const [formData, setFormData] = useState<FormData>({
-    name: "",
-    email: "",
-    subject: "",
-    message: "",
-  })
+    name: '',
+    email: '',
+    subject: '',
+    message: '',
+  });
 
   const [formStatus, setFormStatus] = useState<FormStatus>({
     submitted: false,
     success: false,
-    message: "",
-  })
+    message: '',
+  });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = e.target;
     setFormData((prevState) => ({
       ...prevState,
       [name]: value,
-    }))
-  }
+    }));
+  };
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
+    e.preventDefault();
     setFormStatus({
       submitted: true,
       success: true,
-      message: "Thank you for your message! I will get back to you soon.",
-    })
+      message: 'Thank you for your message! I will get back to you soon.',
+    });
 
     // Reset form after 3 seconds
     setTimeout(() => {
       setFormStatus({
         submitted: false,
         success: false,
-        message: "",
-      })
-    }, 3000)
+        message: '',
+      });
+    }, 3000);
 
     setFormData({
-      name: "",
-      email: "",
-      subject: "",
-      message: "",
-    })
-  }
+      name: '',
+      email: '',
+      subject: '',
+      message: '',
+    });
+  };
 
   const contactInfo = [
     {
       icon: MapPin,
-      title: "Location",
-      value: "Rome, Italy",
+      title: 'Location',
+      value: 'Rome, Italy',
     },
     {
       icon: Phone,
-      title: "Phone",
-      value: "+218 643 65 26",
+      title: 'Phone',
+      value: '+218 643 65 26',
     },
     {
       icon: Mail,
-      title: "Email",
-      value: "a.habberreh@gmail.com",
+      title: 'Email',
+      value: 'a.habberreh@gmail.com',
     },
-  ]
+  ];
 
   return (
-    <section id="contact" className="py-24 px-6 bg-white">
+    <section id="contact" className="py-24 px-6 bg-background">
       <div className="max-w-7xl mx-auto">
         <motion.div
           className="text-center mb-16"
@@ -95,7 +97,9 @@ export function ContactSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          <h2 className="text-3xl md:text-4xl font-bold">Contact Me</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground">
+            Contact Me
+          </h2>
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-12 items-start">
@@ -108,10 +112,13 @@ export function ContactSection() {
             transition={{ duration: 0.8 }}
           >
             <div>
-              <h3 className="text-2xl font-bold mb-4">Get In Touch</h3>
+              <h3 className="text-2xl font-bold mb-4 text-foreground">
+                Get In Touch
+              </h3>
               <p className="text-muted-foreground leading-relaxed">
-                If you're interested in my development work or would like to collaborate on a project, feel free to
-                reach out through the form or contact me directly using the information provided.
+                If you're interested in my development work or would like to
+                collaborate on a project, feel free to reach out through the
+                form or contact me directly using the information provided.
               </p>
             </div>
 
@@ -129,8 +136,12 @@ export function ContactSection() {
                     <info.icon className="h-5 w-5" />
                   </div>
                   <div>
-                    <h4 className="font-semibold mb-1">{info.title}</h4>
-                    <p className="text-muted-foreground text-sm">{info.value}</p>
+                    <h4 className="font-semibold mb-1 text-card-foreground">
+                      {info.title}
+                    </h4>
+                    <p className="text-muted-foreground text-sm">
+                      {info.value}
+                    </p>
                   </div>
                 </motion.div>
               ))}
@@ -204,7 +215,10 @@ export function ContactSection() {
                     />
                   </div>
 
-                  <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+                  <motion.div
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                  >
                     <Button type="submit" className="w-full">
                       Send Message
                     </Button>
@@ -216,5 +230,5 @@ export function ContactSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }

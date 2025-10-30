@@ -52,7 +52,7 @@ export function AboutSection() {
           <motion.h2
             className="text-4xl md:text-5xl font-bold text-foreground"
             style={{ scale }}
-            whileHover={{ scale: 1.05, color: 'hsl(var(--primary))' }}
+            whileHover={{ scale: 1.05 }}
             transition={{ type: 'spring', stiffness: 300 }}
           >
             About Me

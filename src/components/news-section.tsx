@@ -170,7 +170,7 @@ export function NewsSection({ imagesMap }: NewsSectionProps) {
       : enhancedNewsItems.filter((item) => item.category === filter);
 
   return (
-    <section id="news" className="py-24 px-6 bg-[#F5F1E8] overflow-x-hidden">
+    <section id="news" className="py-24 px-6 bg-secondary overflow-x-hidden">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
@@ -226,7 +226,7 @@ export function NewsSection({ imagesMap }: NewsSectionProps) {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 onClick={() => setSelectedNews(item)}
-                className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 cursor-pointer"
+                className="bg-card rounded-xl overflow-hidden shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 cursor-pointer"
               >
                 <div className="relative h-64 overflow-hidden">
                   <img
@@ -269,11 +269,11 @@ export function NewsSection({ imagesMap }: NewsSectionProps) {
                 animate={{ scale: 1, opacity: 1 }}
                 exit={{ scale: 0.8, opacity: 0 }}
                 onClick={(e) => e.stopPropagation()}
-                className="bg-white rounded-xl w-full max-w-4xl max-h-[90vh] flex flex-col relative"
+                className="bg-card rounded-xl w-full max-w-4xl max-h-[90vh] flex flex-col relative"
               >
                 <button
                   onClick={() => setSelectedNews(null)}
-                  className="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/90 hover:bg-white flex items-center justify-center z-10 transition-all hover:rotate-90"
+                  className="absolute top-4 right-4 w-10 h-10 rounded-full bg-background/90 hover:bg-background flex items-center justify-center z-10 transition-all hover:rotate-90"
                 >
                   <X className="w-5 h-5" />
                 </button>
@@ -362,7 +362,7 @@ export function NewsSection({ imagesMap }: NewsSectionProps) {
                       {selectedNews.fullDescription}
                     </p>
 
-                    <div className="mt-10 pt-8 border-t border-gray-200">
+                    <div className="mt-10 pt-8 border-t border-border">
                       <h3 className="text-2xl font-bold mb-4">
                         Additional Details
                       </h3>

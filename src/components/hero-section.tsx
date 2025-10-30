@@ -53,7 +53,7 @@ export function HeroSection() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center justify-center px-6 pt-24 pb-20 overflow-hidden bg-[#F5F1E8]"
+      className="relative min-h-screen flex items-center justify-center px-6 pt-24 pb-20 overflow-hidden bg-secondary"
     >
       <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-accent/5 pointer-events-none" />
 
@@ -132,7 +132,10 @@ export function HeroSection() {
             >
               {[
                 { url: 'https://github.com/habberrih', icon: GitHubIcon },
-                { url: 'https://linkedin.com/in/habberrih', icon: LinkedInIcon },
+                {
+                  url: 'https://linkedin.com/in/habberrih',
+                  icon: LinkedInIcon,
+                },
                 { url: 'mailto:a.habberreh@gmail.com', icon: Mail },
               ].map((social, index) => {
                 const Icon = social.icon;
