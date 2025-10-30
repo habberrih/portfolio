@@ -42,7 +42,7 @@ export function Footer() {
   ];
 
   return (
-    <footer className="bg-[#2C2416] text-white">
+    <footer className="bg-[#2C2416] dark:bg-[#1a1410] text-white">
       <div className="max-w-6xl mx-auto px-6 py-20">
         {/* Footer Content Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-12 mb-16">
@@ -70,14 +70,14 @@ export function Footer() {
           >
             <h4 className="text-lg font-semibold mb-5 pb-3 relative inline-block">
               Quick Links
-              <span className="absolute bottom-0 left-0 md:left-0 w-10 h-0.5 bg-[#D4A574]" />
+              <span className="absolute bottom-0 left-0 md:left-0 w-10 h-0.5 bg-primary" />
             </h4>
             <ul className="space-y-2.5">
               {quickLinks.map((link) => (
                 <li key={link.name}>
                   <a
                     href={link.href}
-                    className="text-white/70 hover:text-[#D4A574] hover:pl-1.5 transition-all duration-300 inline-block"
+                    className="text-white/70 hover:text-primary hover:pl-1.5 transition-all duration-300 inline-block"
                   >
                     {link.name}
                   </a>
@@ -96,7 +96,7 @@ export function Footer() {
           >
             <h4 className="text-lg font-semibold mb-5 pb-3 relative inline-block">
               Connect With Me
-              <span className="absolute bottom-0 left-0 md:left-0 w-10 h-0.5 bg-[#D4A574]" />
+              <span className="absolute bottom-0 left-0 md:left-0 w-10 h-0.5 bg-primary" />
             </h4>
             <div className="flex gap-4 justify-center md:justify-start">
               {socialLinks.map((social) => (
@@ -106,7 +106,7 @@ export function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={social.label}
-                  className="flex items-center justify-center w-10 h-10 rounded-full bg-white/10 text-white hover:bg-[#D4A574] transition-all duration-300"
+                  className="flex items-center justify-center w-10 h-10 rounded-full bg-white/10 text-white hover:bg-primary transition-all duration-300"
                   whileHover={{ y: -3 }}
                   whileTap={{ scale: 0.95 }}
                 >
