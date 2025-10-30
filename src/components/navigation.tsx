@@ -65,7 +65,7 @@ export function Navigation() {
             <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center">
               <Code2 className="h-5 w-5 text-primary-foreground" />
             </div>
-            <span className="hidden sm:inline">Abdullah</span>
+            <span className="hidden sm:inline">Habberrih</span>
           </a>
 
           <div className="hidden md:flex items-center gap-1">
