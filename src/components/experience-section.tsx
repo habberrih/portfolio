@@ -27,7 +27,7 @@ const experiences = [
 
 export function ExperienceSection() {
   return (
-    <section id="experience" className="py-24 px-6 bg-[#F5F1E8]">
+    <section id="experience" className="py-24 px-6 bg-secondary">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <motion.h2
@@ -75,10 +75,10 @@ export function ExperienceSection() {
                   <motion.div
                     whileHover={{
                       y: -5,
-                      shadow: '0 20px 40px rgba(0,0,0,0.1)',
+                      boxShadow: '0 20px 40px rgba(0,0,0,0.1)',
                     }}
                     transition={{ duration: 0.3 }}
-                    className="bg-white rounded-xl p-8 shadow-md hover:shadow-xl transition-all"
+                    className="bg-card rounded-xl p-8 shadow-md hover:shadow-xl transition-all"
                   >
                     {/* Company badge */}
                     <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full mb-4">
@@ -87,12 +87,12 @@ export function ExperienceSection() {
                     </div>
 
                     {/* Title */}
-                    <h3 className="text-2xl font-bold mb-3 text-foreground">
+                    <h3 className="text-2xl font-bold mb-3 text-card-foreground">
                       {exp.title}
                     </h3>
 
                     {/* Period */}
-                    <div className="flex items-center gap-2 text-foreground/60 mb-6">
+                    <div className="flex items-center gap-2 text-muted-foreground mb-6">
                       <Calendar className="w-4 h-4" />
                       <span className="font-mono text-sm">{exp.period}</span>
                     </div>
@@ -100,7 +100,10 @@ export function ExperienceSection() {
                     {/* Description */}
                     <ul className="space-y-3">
                       {exp.description.map((item, i) => (
-                        <li key={i} className="flex gap-3 text-foreground/70">
+                        <li
+                          key={i}
+                          className="flex gap-3 text-muted-foreground"
+                        >
                           <span className="text-primary mt-1 flex-shrink-0">
                             •
                           </span>
