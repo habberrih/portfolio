@@ -108,9 +108,9 @@ export function HeroSection() {
               className="text-lg text-muted-foreground leading-relaxed max-w-xl"
             >
               A Computer Science Graduate with expertise in backend development
-              and IoT solutions. I specialize in building robust APIs, scalable
-              systems, and innovative IoT applications using Node.js, NestJS,
-              and Docker.
+              and AI agents solutions. I specialize in building robust APIs,
+              scalable systems, and innovative AI applications using Node.js,
+              NestJS, Langgraph, and Docker.
             </motion.p>
 
             <motion.div
