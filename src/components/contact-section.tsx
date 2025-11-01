@@ -73,12 +73,12 @@ export function ContactSection() {
     {
       icon: MapPin,
       title: 'Location',
-      value: 'Rome, Italy',
+      value: 'Pisa, Italy',
     },
     {
       icon: Phone,
       title: 'Phone',
-      value: '+218 643 65 26',
+      value: '+39 331 447 0392',
     },
     {
       icon: Mail,
