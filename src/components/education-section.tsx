@@ -20,16 +20,17 @@ const education = [
 
 const publications = [
   {
-    title: 'Advanced Backend Architecture Patterns in Distributed Systems',
-    venue: 'International Conference on Software Engineering',
+    title: 'Sentiment Analysis of Arabic Dialects: A Review Study',
+    venue: 'International Conference on Computing and Informatics',
     date: '2024',
-    authors: 'Abdullah Habberrih, et al.',
+    authors: 'Habberrih, A., Abuzaraida, M.A.',
   },
   {
-    title: 'IoT Integration with Modern Backend Technologies',
-    venue: 'Journal of Computer Science and Technology',
-    date: '2023',
-    authors: 'Abdullah Habberrih, John Doe',
+    title:
+      'Sentiment Analysis of Libyan Middle Region Using Machine Learning with TF-IDF and N-grams',
+    venue: 'Information and Communications Technologies. ILCICT 2023',
+    date: '2024',
+    authors: 'Habberrih, Abdullah & Abuzaraida, Mustafa.',
   },
 ];
 
