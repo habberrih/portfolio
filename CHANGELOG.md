@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.2.2](https://github.com/habberrih/portfolio/compare/v1.2.1...v1.2.2) (2025-11-01)
+
+
+### Bug Fixes
+
+* update contact information in ContactSection for accuracy ([922d4dd](https://github.com/habberrih/portfolio/commit/922d4dd811b0d487fe4946182117ed0e6e9330c6))
+* update publication details in EducationSection for accuracy ([ed87fff](https://github.com/habberrih/portfolio/commit/ed87fff191b68de4ab3e17df10582e06ad9893be))
+
 ## [1.2.1](https://github.com/habberrih/portfolio/compare/v1.2.0...v1.2.1) (2025-10-30)
 
 
