@@ -15,8 +15,8 @@ export function AboutSection() {
   const scale = useTransform(scrollYProgress, [0, 1], [0.8, 1.2]);
 
   const stats = [
-    { number: '3+', text: 'Years of Experience' },
-    { number: '10+', text: 'Projects Completed' },
+    { number: '3.5+', text: 'Years of Experience' },
+    { number: '4+', text: 'Projects Completed' },
     { number: '5+', text: 'Technologies Mastered' },
   ];
 
@@ -31,6 +31,7 @@ export function AboutSection() {
     { icon: Code2, name: 'Node.js', color: '#68A063' },
     { icon: Code2, name: 'NestJS', color: '#E0234E' },
     { icon: Code2, name: 'TypeScript', color: '#3178C6' },
+    { icon: Code2, name: 'Langgraph', color: '#F05032' },
     { icon: Database, name: 'PostgreSQL', color: '#336791' },
     { icon: Database, name: 'MongoDB', color: '#47A248' },
     { icon: Container, name: 'Docker', color: '#2496ED' },
@@ -101,15 +102,22 @@ export function AboutSection() {
               <span className="text-foreground font-semibold">
                 Abdullah Habberrih
               </span>
-              , a backend developer with 3+ years of experience designing robust
-              APIs using{' '}
+              , a backend developer and software engineer with 3.5+ years of
+              professional experience building scalable APIs and distributed
+              systems using{' '}
               <span className="text-foreground font-medium">Node.js</span>,{' '}
               <span className="text-foreground font-medium">NestJS</span>, and{' '}
-              <span className="text-foreground font-medium">Express.js</span>.
-              I'm passionate about performance, scalability, and clean
-              architecture. Currently working at{' '}
+              <span className="text-foreground font-medium">
+                modern JavaScript/TypeScript stacks
+              </span>
+              . Currently, I’m pursuing an MSc in Computer Science at the
+              University of Pisa (Italy) as a recipient of the Italian
+              Government MAECI Scholarship (2025–2026). Currently working at{' '}
               <span className="text-foreground font-semibold">Lamah</span>,
-              where I develop API-driven backend systems.
+              where I develop API-driven backend systems. I’m passionate about
+              designing backend architectures, integrating AI agents (LangGraph)
+              into real-world applications, and contributing to open-source
+              software.
             </p>
 
             <div className="grid grid-cols-3 gap-4 pt-4">
