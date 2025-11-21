@@ -146,7 +146,7 @@ Notes
 ## 📧 Contact
 
 - **Email**: a.habberreh@gmail.com
-- **Phone**: +218 643 65 26
+- **Phone**: +39 352 092 8974
 - **Location**: Rome, Italy
 - **LinkedIn**: [Abdullah Habberrih](https://linkedin.com/in/abdullah-habberrih)
 - **GitHub**: [Abdullah Habberrih](https://github.com/abdullah-habberrih)
