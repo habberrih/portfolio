@@ -1,16 +1,16 @@
-'use client';
+"use client";
 
-import { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
-import { Button } from '@/components/ui/button';
-import { Mail } from 'lucide-react';
-import { GitHubIcon, LinkedInIcon } from '@/components/icons/brand-icons';
+import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
+import { Button } from "@/components/ui/button";
+import { Mail } from "lucide-react";
+import { GitHubIcon, LinkedInIcon } from "@/components/icons/brand-icons";
 
 export function HeroSection() {
-  const [typingText, setTypingText] = useState('');
+  const [typingText, setTypingText] = useState("");
   const [typingIndex, setTypingIndex] = useState(0);
   const [showCursor, setShowCursor] = useState(true);
-  const roles = ['Backend Developer', 'API Architect', 'IoT Developer'];
+  const roles = ["AI Systems Engineer", "Backend Developer", "NLP Researcher"];
   const [currentRoleIndex, setCurrentRoleIndex] = useState(0);
 
   useEffect(() => {
@@ -78,7 +78,7 @@ export function HeroSection() {
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{
-                type: 'spring',
+                type: "spring",
                 stiffness: 200,
                 delay: 0.4,
                 duration: 0.8,
@@ -92,9 +92,7 @@ export function HeroSection() {
               <motion.h2 className="text-3xl md:text-4xl font-medium text-primary">
                 {typingText}
                 <span
-                  className={`inline-block ml-1 ${
-                    showCursor ? 'opacity-100' : 'opacity-0'
-                  } transition-opacity`}
+                  className={`inline-block ml-1 ${showCursor ? "opacity-100" : "opacity-0"} transition-opacity`}
                 >
                   |
                 </span>
@@ -107,10 +105,10 @@ export function HeroSection() {
               transition={{ duration: 0.5, delay: 0.8 }}
               className="text-lg text-muted-foreground leading-relaxed max-w-xl"
             >
-              A Computer Science Graduate with expertise in backend development
-              and AI agents solutions. I specialize in building robust APIs,
-              scalable systems, and innovative AI applications using Node.js,
-              NestJS, Langgraph, and Docker.
+              Master&apos;s Student at University of Pisa specializing in AI. I
+              build AI-powered systems, scalable backends, and conduct NLP
+              research on Arabic dialects using Node.js, NestJS, LangChain, and
+              Python.
             </motion.p>
 
             <motion.div
@@ -131,12 +129,12 @@ export function HeroSection() {
               className="flex items-center gap-5 pt-2"
             >
               {[
-                { url: 'https://github.com/habberrih', icon: GitHubIcon },
+                { url: "https://github.com/habberrih", icon: GitHubIcon },
                 {
-                  url: 'https://linkedin.com/in/habberrih',
+                  url: "https://linkedin.com/in/habberrih",
                   icon: LinkedInIcon,
                 },
-                { url: 'mailto:a.habberreh@gmail.com', icon: Mail },
+                { url: "mailto:a.habberreh@gmail.com", icon: Mail },
               ].map((social, index) => {
                 const Icon = social.icon;
                 return (
@@ -194,7 +192,7 @@ export function HeroSection() {
                 transition={{
                   duration: 7,
                   repeat: Number.POSITIVE_INFINITY,
-                  repeatType: 'reverse',
+                  repeatType: "reverse",
                 }}
                 className="absolute top-[20%] right-[15%] w-20 h-20 rounded-full bg-primary/20 opacity-60"
               />
@@ -208,7 +206,7 @@ export function HeroSection() {
                 transition={{
                   duration: 5,
                   repeat: Number.POSITIVE_INFINITY,
-                  repeatType: 'reverse',
+                  repeatType: "reverse",
                 }}
                 className="absolute bottom-[20%] left-[15%] w-16 h-16 rounded-full bg-primary/15 opacity-60"
               />
@@ -222,7 +220,7 @@ export function HeroSection() {
                 transition={{
                   duration: 6,
                   repeat: Number.POSITIVE_INFINITY,
-                  repeatType: 'reverse',
+                  repeatType: "reverse",
                 }}
                 className="absolute top-[60%] right-[25%] w-10 h-10 rounded-full bg-primary/10 opacity-60"
               />

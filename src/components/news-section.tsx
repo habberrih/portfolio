@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import { useState, useEffect, useMemo } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { useState, useEffect, useMemo } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import {
   Trophy,
   Heart,
@@ -9,9 +9,9 @@ import {
   X,
   ChevronLeft,
   ChevronRight,
-} from 'lucide-react';
+} from "lucide-react";
 
-type Category = 'award' | 'volunteer' | 'travel';
+type Category = "award" | "volunteer" | "travel";
 
 type NewsItem = {
   id: number;
@@ -33,123 +33,152 @@ type NewsSectionProps = {
 const newsItems: NewsItem[] = [
   {
     id: 1,
-    category: 'award',
+    category: "award",
     icon: Trophy,
-    title: 'Bronze Award: 2nd place in Best Graduation Project Competition',
+    title: "Bronze Award: 2nd Place - Libya Innovation Award",
     description:
-      'Won 2nd place in the Best Graduation Project Competition (Libya Innovation Award) out of 250 participants.',
-    date: 'January 2025',
-    image: '/libya-innovation-award-ceremony.jpg',
+      "Won 2nd place in the Best Graduation Project Competition (Libya Innovation Award) out of 250 participants.",
+    date: "January 2025",
+    image: "/libya-innovation-award-ceremony.jpg",
     images: [
-      '/libya-innovation-award-ceremony-stage.jpg',
-      '/libya-innovation-award-trophy-presentation.jpg',
-      '/libya-innovation-award-team-photo.jpg',
+      "/libya-innovation-award-ceremony-stage.jpg",
+      "/libya-innovation-award-trophy-presentation.jpg",
+      "/libya-innovation-award-team-photo.jpg",
     ],
     fullDescription:
-      'I was honored to receive the Bronze Award for my graduation project at the Libya Innovation Award competition. Out of 250 participants from across the country, our project was recognized for its innovative approach to solving real-world problems. The competition was held in January 2025 and featured projects from various fields of technology and science. Our project focused on developing a novel solution using AI and machine learning techniques.',
+      "I was honored to receive the Bronze Award (2nd place) for my graduation project at the Libya Innovation Award competition. Out of 250 participants from across the country, our project on Sentiment Analysis of Libyan Dialect was recognized for its innovative approach to NLP challenges in Arabic dialects. This competition showcased the best graduation projects from various fields of technology and science across Libya.",
   },
   {
     id: 2,
-    category: 'award',
+    category: "award",
     icon: Trophy,
-    title: 'Gold Award: Best Academic Poster',
+    title: "Gold Award: Best Academic Poster",
     description:
-      'Won 1st prize for the best academic poster at Misurata University - Information Technology College.',
-    date: 'June 2023',
-    image: '/academic-poster-presentation.jpg',
+      "Won 1st prize for the best academic poster at Misurata University - Information Technology College.",
+    date: "June 2023",
+    image: "/academic-poster-presentation.jpg",
     images: [
-      '/academic-poster-award-ceremony.jpg',
-      '/academic-poster-display.jpg',
+      "/academic-poster-award-ceremony.jpg",
+      "/academic-poster-display.jpg",
     ],
     fullDescription:
-      'In June 2023, I was awarded the Gold Award for the best academic poster at Misurata University - Information Technology College. The poster presented my research on Sentiment Analysis of Libyan Dialect Using Machine Learning with Stemming and Stopwords Removal. This recognition highlighted the importance of my work in advancing NLP techniques for Arabic dialects, particularly the Libyan dialect which has been underrepresented in research.',
+      "In June 2023, I was awarded the Gold Award (1st prize) for the best academic poster at Misurata University - Information Technology College. The poster presented my research on Sentiment Analysis of Libyan Dialect Using Machine Learning with Stemming and Stopwords Removal. This recognition highlighted the importance of advancing NLP techniques for Arabic dialects, particularly the Libyan dialect which has been underrepresented in research.",
   },
   {
     id: 3,
-    category: 'award',
+    category: "award",
     icon: Trophy,
-    title: 'Bronze Award: Smart NICU Solution',
+    title: "Bronze Award: Huawei Tech4Good Global Competition",
     description:
-      'Won 3rd prize for the development of a Smart NICU solution at the Huawei Tech4Good Global Competition.',
-    date: 'January 2022',
-    image: '/huawei-tech4good-competition.jpg',
+      "Won 3rd prize for the development of a Smart NICU solution at the Huawei Tech4Good Global Competition.",
+    date: "January 2022",
+    image: "/huawei-tech4good-competition.jpg",
     images: [
-      '/huawei-tech4good-award-ceremony.jpg',
-      '/smart-nicu-project-demonstration.jpg',
-      '/huawei-tech4good-team-presentation.jpg',
-      '/huawei-tech4good-trophy.jpg',
+      "/huawei-tech4good-award-ceremony.jpg",
+      "/smart-nicu-project-demonstration.jpg",
+      "/huawei-tech4good-team-presentation.jpg",
+      "/huawei-tech4good-trophy.jpg",
     ],
     fullDescription:
-      'In January 2022, our team won the Bronze Award at the Huawei Tech4Good Global Competition for our Smart NICU solution. This innovative project aimed to improve neonatal care in intensive care units by implementing IoT sensors and real-time monitoring systems. The competition brought together teams from around the world, and we were proud to represent Libya with our solution that addresses critical healthcare challenges.',
+      "In January 2022, our team won the Bronze Award (3rd prize) at the Huawei Tech4Good Global Competition for our Smart NICU solution. This innovative IoT project aimed to improve neonatal care in intensive care units by implementing real-time sensor monitoring systems. The competition brought together teams from around the world, and we were proud to represent Libya with our healthcare solution.",
   },
   {
     id: 4,
-    category: 'award',
+    category: "award",
     icon: Trophy,
-    title: 'Bronze Award: I-RIA 2023 Competition',
+    title: "Bronze Award: I-RIA 2023 Competition, Malaysia",
     description:
-      'Won 3rd prize at the Innovative Research, Invention and Application Exhibition (I-RIA) 2023 Competition in Malaysia.',
-    date: 'September 2023',
-    image: '/i-ria-2023-malaysia-competition.jpg',
+      "Won 3rd prize at the Innovative Research, Invention and Application Exhibition (I-RIA) 2023 Competition in Malaysia.",
+    date: "September 2023",
+    image: "/i-ria-2023-malaysia-competition.jpg",
     images: [
-      '/i-ria-2023-award-ceremony-malaysia.jpg',
-      '/i-ria-2023-research-presentation.jpg',
-      '/placeholder.svg?height=800&width=1200',
+      "/i-ria-2023-award-ceremony-malaysia.jpg",
+      "/i-ria-2023-research-presentation.jpg",
     ],
     fullDescription:
-      'I was honored to receive the Bronze Award at the Innovative Research, Invention and Application Exhibition (I-RIA) 2023 Competition in Malaysia. This international recognition was for my research on Sentiment Analysis of Libyan Dialect Using Machine Learning with Stemming and Stopwords Removal. The competition featured innovative projects from participants worldwide, and it was a privilege to present my work on such a global stage.',
+      "I was honored to receive the Bronze Award (3rd prize) at the Innovative Research, Invention and Application Exhibition (I-RIA) 2023 Competition in Malaysia. This international recognition was for my research on Sentiment Analysis of Libyan Dialect Using Machine Learning with Stemming and Stopwords Removal. The competition featured innovative projects from participants worldwide.",
   },
   {
     id: 5,
-    category: 'volunteer',
+    category: "volunteer",
     icon: Heart,
-    title: 'Volunteer: Youth Tech Mentorship Program',
+    title: "Ambassador - Huawei Seeds For The Future Program",
     description:
-      'Mentored young students in programming fundamentals and project-based learning.',
-    date: 'March 2024',
-    image: '/placeholder.svg?height=400&width=600',
+      "Represented Libya as an Ambassador in Huawei's prestigious SFTF program, promoting technology and innovation.",
+    date: "June 2022 - June 2023",
+    image: "/placeholder.svg?height=400&width=600",
     images: [
-      '/placeholder.svg?height=800&width=1200',
-      '/placeholder.svg?height=800&width=1200',
+      "/placeholder.svg?height=800&width=1200",
+      "/placeholder.svg?height=800&width=1200",
     ],
     fullDescription:
-      'Volunteered as a mentor for aspiring young developers, guiding them through fundamental concepts in programming and helping them build their first projects. This experience was incredibly rewarding as I watched students grow from beginners to confident coders capable of building their own applications.',
+      "Represented Libya as an Ambassador in Huawei's prestigious Seeds For The Future (SFTF) program in 2022, a global initiative aimed at cultivating young talent in technology and innovation. Spearheaded the integration of advanced technologies into local educational and tech communities, and facilitated knowledge transfer among young professionals and students in Libya.",
   },
   {
     id: 6,
-    category: 'travel',
-    icon: Plane,
-    title: 'Research Visit to Malaysia',
+    category: "volunteer",
+    icon: Heart,
+    title: "Technical Team Leader - IT Faculty Students' Union",
     description:
-      'Traveled to Malaysia to present research at the Innovative Research, Invention and Application Exhibition (I-RIA) 2023.',
-    date: 'September 2023',
-    image: '/placeholder.svg?height=400&width=600',
+      "Led the technical team and orchestrated programming competitions at the college.",
+    date: "May 2022 - October 2023",
+    image: "/placeholder.svg?height=400&width=600",
     images: [
-      '/placeholder.svg?height=800&width=1200',
-      '/placeholder.svg?height=800&width=1200',
-      '/placeholder.svg?height=800&width=1200',
-      '/placeholder.svg?height=800&width=1200',
+      "/placeholder.svg?height=800&width=1200",
+      "/placeholder.svg?height=800&width=1200",
     ],
     fullDescription:
-      'In September 2023, I traveled to Malaysia to present my research at the Innovative Research, Invention and Application Exhibition (I-RIA) 2023. This international trip was a significant milestone in my academic journey, allowing me to share my work on Sentiment Analysis of Libyan Dialect with a global audience. During my visit, I had the opportunity to network with researchers from around the world, explore Malaysian culture, and gain valuable feedback on my research.',
+      "Served as the Technical Team Leader for the college students' union, leveraging technical expertise to support student learning and engagement. Orchestrated a programming competition during the sixth technical and cultural season at my college, managing logistics, setting challenges, and fostering a competitive yet collaborative environment for participants.",
+  },
+  {
+    id: 7,
+    category: "travel",
+    icon: Plane,
+    title: "Research Visit to Malaysia - I-RIA 2023",
+    description:
+      "Traveled to Malaysia to present research at the Innovative Research, Invention and Application Exhibition (I-RIA) 2023.",
+    date: "September 2023",
+    image: "/placeholder.svg?height=400&width=600",
+    images: [
+      "/placeholder.svg?height=800&width=1200",
+      "/placeholder.svg?height=800&width=1200",
+    ],
+    fullDescription:
+      "In September 2023, I traveled to Malaysia to present my research at the Innovative Research, Invention and Application Exhibition (I-RIA) 2023. This international trip was a significant milestone in my academic journey, allowing me to share my work on Sentiment Analysis of Libyan Dialect with a global audience and network with researchers from around the world.",
+  },
+  {
+    id: 8,
+    category: "travel",
+    icon: Plane,
+    title: "Erasmus+ Exchange - Rome, Italy",
+    description:
+      "Completed Erasmus+ exchange program at Sapienza University of Rome studying Big Data and Data Science.",
+    date: "September 2024 - February 2025",
+    image: "/placeholder.svg?height=400&width=600",
+    images: [
+      "/placeholder.svg?height=800&width=1200",
+      "/placeholder.svg?height=800&width=1200",
+    ],
+    fullDescription:
+      "Completed an Erasmus+ Exchange Program at Sapienza University of Rome from September 2024 to February 2025. During this period, I completed Master's-level courses in Big Data Computing and Data Science, gaining valuable international academic experience and expanding my expertise in advanced computing topics.",
   },
 ];
 
 export function NewsSection({ imagesMap }: NewsSectionProps) {
-  const [filter, setFilter] = useState<Category | 'all'>('all');
+  const [filter, setFilter] = useState<Category | "all">("all");
   const [selectedNews, setSelectedNews] = useState<NewsItem | null>(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   useEffect(() => {
     if (selectedNews) {
       setCurrentImageIndex(0);
-      document.body.style.overflow = 'hidden';
+      document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = 'auto';
+      document.body.style.overflow = "auto";
     }
 
     return () => {
-      document.body.style.overflow = 'auto';
+      document.body.style.overflow = "auto";
     };
   }, [selectedNews]);
 
@@ -165,7 +194,7 @@ export function NewsSection({ imagesMap }: NewsSectionProps) {
   }, [imagesMap]);
 
   const filteredNews =
-    filter === 'all'
+    filter === "all"
       ? enhancedNewsItems
       : enhancedNewsItems.filter((item) => item.category === filter);
 
@@ -190,24 +219,24 @@ export function NewsSection({ imagesMap }: NewsSectionProps) {
         {/* Filter Buttons */}
         <div className="flex justify-center flex-wrap gap-2 mb-12">
           {[
-            { value: 'all', label: 'All' },
-            { value: 'award', label: 'Awards' },
-            { value: 'volunteer', label: 'Volunteer Work' },
-            { value: 'travel', label: 'Travels' },
+            { value: "all", label: "All" },
+            { value: "award", label: "Awards" },
+            { value: "volunteer", label: "Volunteer Work" },
+            { value: "travel", label: "Travels" },
           ].map((item) => (
             <button
               key={item.value}
-              onClick={() => setFilter(item.value as Category | 'all')}
+              onClick={() => setFilter(item.value as Category | "all")}
               className={`relative px-5 py-2.5 text-base font-medium transition-colors ${
                 filter === item.value
-                  ? 'text-primary'
-                  : 'text-foreground/60 hover:text-primary'
+                  ? "text-primary"
+                  : "text-foreground/60 hover:text-primary"
               }`}
             >
               {item.label}
               <span
                 className={`absolute bottom-0 left-1/2 -translate-x-1/2 h-0.5 bg-primary transition-all duration-300 ${
-                  filter === item.value ? 'w-8' : 'w-0'
+                  filter === item.value ? "w-8" : "w-0"
                 }`}
               />
             </button>
@@ -230,7 +259,7 @@ export function NewsSection({ imagesMap }: NewsSectionProps) {
               >
                 <div className="relative h-64 overflow-hidden">
                   <img
-                    src={item.image || '/placeholder.svg'}
+                    src={item.image || "/placeholder.svg"}
                     alt={item.title}
                     className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
                   />
@@ -284,7 +313,7 @@ export function NewsSection({ imagesMap }: NewsSectionProps) {
                     <img
                       src={
                         selectedNews.images[currentImageIndex] ||
-                        '/placeholder.svg'
+                        "/placeholder.svg"
                       }
                       alt={selectedNews.title}
                       className="w-full h-full object-cover"
@@ -298,7 +327,7 @@ export function NewsSection({ imagesMap }: NewsSectionProps) {
                             setCurrentImageIndex((prev) =>
                               prev === 0
                                 ? selectedNews.images.length - 1
-                                : prev - 1
+                                : prev - 1,
                             );
                           }}
                           className="absolute left-5 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white/90 hover:bg-white flex items-center justify-center transition-all hover:scale-110 shadow-lg"
@@ -312,7 +341,7 @@ export function NewsSection({ imagesMap }: NewsSectionProps) {
                             setCurrentImageIndex((prev) =>
                               prev === selectedNews.images.length - 1
                                 ? 0
-                                : prev + 1
+                                : prev + 1,
                             );
                           }}
                           className="absolute right-5 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white/90 hover:bg-white flex items-center justify-center transition-all hover:scale-110 shadow-lg"
@@ -330,8 +359,8 @@ export function NewsSection({ imagesMap }: NewsSectionProps) {
                               }}
                               className={`w-3 h-3 rounded-full transition-all ${
                                 index === currentImageIndex
-                                  ? 'bg-white scale-110'
-                                  : 'bg-white/50'
+                                  ? "bg-white scale-110"
+                                  : "bg-white/50"
                               }`}
                             />
                           ))}

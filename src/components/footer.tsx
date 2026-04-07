@@ -56,7 +56,8 @@ export function Footer() {
           >
             <h3 className="text-2xl font-bold mb-3">Abdullah Habberrih</h3>
             <p className="text-white/70 leading-relaxed">
-              AI & NLP Researcher | Backend & IoT Developer
+              Master&apos;s Student @ UniPi | AI Systems Engineer | Backend
+              Developer
             </p>
           </motion.div>
 

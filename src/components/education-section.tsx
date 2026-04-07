@@ -1,36 +1,68 @@
-'use client';
+"use client";
 
-import { motion } from 'framer-motion';
-import { GraduationCap, MapPin, Calendar, BookOpen, Users } from 'lucide-react';
+import { motion } from "framer-motion";
+import { GraduationCap, MapPin, Calendar, BookOpen, Users } from "lucide-react";
 
 const education = [
   {
-    degree: "Master's (Exchange Program)",
-    institution: 'Sapienza University of Rome',
-    location: 'Rome, Italy',
-    period: '2024 — 2025',
+    degree: "Master's Degree in Computer Science",
+    institution: "University of Pisa",
+    location: "Pisa, Italy",
+    period: "Sep 2025 — Present",
+    details: "Major in Artificial Intelligence track",
   },
   {
-    degree: "Bachelor's Degree",
-    institution: 'Misurata University',
-    location: 'Misurata, Libya',
-    period: '2018 — 2023',
+    degree: "Erasmus+ Exchange Program",
+    institution: "Sapienza University of Rome",
+    location: "Rome, Italy",
+    period: "Sep 2024 — Feb 2025",
+    details:
+      "Completed Master's-level courses in Big Data Computing and Data Science",
+  },
+  {
+    degree: "Bachelor of Information Technology",
+    institution: "Misurata University",
+    location: "Misurata, Libya",
+    period: "Oct 2018 — Aug 2023",
+    details: "Major in Computer Science",
   },
 ];
 
 const publications = [
   {
-    title: 'Sentiment Analysis of Arabic Dialects: A Review Study',
-    venue: 'International Conference on Computing and Informatics',
-    date: '2024',
-    authors: 'Habberrih, A., Abuzaraida, M.A.',
+    title:
+      "A review of the available Arabic dialects datasets for Sentiment Analysis",
+    venue: "Journal of Sustainable Research in Applied Sciences",
+    date: "Sep 2024",
+    authors: "Habberrih, Abdullah & Abuzaraida, Mustafa",
   },
   {
     title:
-      'Sentiment Analysis of Libyan Middle Region Using Machine Learning with TF-IDF and N-grams',
-    venue: 'Information and Communications Technologies. ILCICT 2023',
-    date: '2024',
-    authors: 'Habberrih, Abdullah & Abuzaraida, Mustafa.',
+      "Sentiment Analysis of Libyan Dialect Using Machine Learning with Stemming and Stopwords Removal",
+    venue: "DOI Publication",
+    date: "Jul 2024",
+    authors: "Habberrih, Abdullah & Abuzaraida, Mustafa",
+  },
+  {
+    title:
+      "Sentiment Analysis of Libyan Middle Region Using Machine Learning with TF-IDF and N-grams",
+    venue: "ILCICT2023 - International Libyan Conference for ICT",
+    date: "Jun 2024",
+    authors: "Habberrih, A. & Abuzaraida, M.A.",
+  },
+  {
+    title: "Sentiment Analysis of Arabic Dialects: A Review Study",
+    venue:
+      "ICOCI 2023 - Springer Communications in Computer and Information Science",
+    date: "Jan 2024",
+    authors: "Habberrih, A. & Abuzaraida, M.A.",
+  },
+  {
+    title:
+      "Sentiment Analysis of Libyan Dialect Using Machine Learning with Stemming and Stop-Words Removal",
+    venue: "I-RIA 2023 - Malaysia",
+    date: "Sep 2023",
+    authors: "Habberrih, Abdullah & Abuzaraida, Mustafa",
   },
 ];
 

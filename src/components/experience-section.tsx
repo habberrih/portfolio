@@ -1,26 +1,41 @@
-'use client';
+"use client";
 
-import { motion } from 'framer-motion';
-import { Briefcase, Calendar } from 'lucide-react';
+import { motion } from "framer-motion";
+import { Briefcase, Calendar } from "lucide-react";
 
 const experiences = [
   {
-    title: 'Backend Developer',
-    company: 'Lamah',
-    period: '2022 — Present',
+    title: "AI Systems Engineer",
+    company: "Lamah",
+    period: "Mar 2025 — Present",
     description: [
-      'Built REST APIs with NestJS & Node.js',
-      'Containerized services using Docker and integrated CI/CD pipelines',
-      'Worked with PostgreSQL, MongoDB, and E2E testing (Jest)',
+      "Designed AI-powered conversational systems using LLMs and multi-agent orchestration (LangGraph)",
+      "Built production-ready WhatsApp assistant with real-time messaging workflows",
+      "Implemented persistent memory using PostgreSQL and integrated Stripe payment systems",
+      "Added voice interaction features using speech-to-text and text-to-speech pipelines",
     ],
   },
   {
-    title: 'R&D Programmer',
-    company: 'Lamah',
-    period: '2024',
+    title: "Backend Developer",
+    company: "Lamah",
+    period: "Jun 2022 — Feb 2025",
     description: [
-      'Built IoT-based systems with ESP8266 and C++',
-      'Automated deployments with Terraform & Jenkins',
+      "Designed and maintained scalable APIs using NestJS, Node.js, and Express",
+      "Managed containerized deployments using Docker across development and production environments",
+      "Collaborated with cross-functional teams to define API specifications and deliver production-ready systems",
+      "Wrote end-to-end tests to ensure system reliability and performance",
+      "Utilized Git for version control and contributed to CI/CD workflows",
+      "Worked with PostgreSQL and MongoDB for scalable data storage",
+    ],
+  },
+  {
+    title: "R&D Programmer (IoT Projects)",
+    company: "Lamah",
+    period: "Jan 2024 — Sep 2024",
+    description: [
+      "Developed ESP8266-based controller systems for real-time sensor data collection",
+      "Built OTA update mechanisms and customized ThingsBoard platform",
+      "Deployed infrastructure using Terraform and containerized environments (Docker, Jenkins)",
     ],
   },
 ];
@@ -64,7 +79,7 @@ export function ExperienceSection() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.2 }}
                 className={`relative flex flex-col md:flex-row gap-8 ${
-                  index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
+                  index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
                 }`}
               >
                 {/* Timeline dot */}
@@ -75,7 +90,7 @@ export function ExperienceSection() {
                   <motion.div
                     whileHover={{
                       y: -5,
-                      boxShadow: '0 20px 40px rgba(0,0,0,0.1)',
+                      boxShadow: "0 20px 40px rgba(0,0,0,0.1)",
                     }}
                     transition={{ duration: 0.3 }}
                     className="bg-card rounded-xl p-8 shadow-md hover:shadow-xl transition-all"

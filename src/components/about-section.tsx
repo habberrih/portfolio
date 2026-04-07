@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion, useScroll, useTransform } from "framer-motion";
 import {
   Code2,
   Database,
@@ -8,36 +8,37 @@ import {
   Container,
   GitBranch,
   Workflow,
-} from 'lucide-react';
+} from "lucide-react";
 
 export function AboutSection() {
   const { scrollYProgress } = useScroll();
   const scale = useTransform(scrollYProgress, [0, 1], [0.8, 1.2]);
 
   const stats = [
-    { number: '3.5+', text: 'Years of Experience' },
-    { number: '4+', text: 'Projects Completed' },
-    { number: '5+', text: 'Technologies Mastered' },
+    { number: "4+", text: "Years of Experience" },
+    { number: "5+", text: "Publications" },
+    { number: "4", text: "International Awards" },
   ];
 
   const skills = [
-    { name: 'NestJS / Node.js / Express', percentage: 95 },
-    { name: 'JavaScript / TypeScript', percentage: 90 },
-    { name: 'PostgreSQL / MongoDB', percentage: 85 },
-    { name: 'Docker / CI/CD / DevOps', percentage: 80 },
+    { name: "LLM Apps / LangChain / LangGraph", percentage: 90 },
+    { name: "NestJS / Node.js / Express", percentage: 95 },
+    { name: "JavaScript / TypeScript / Python", percentage: 90 },
+    { name: "PostgreSQL / MongoDB / Prisma", percentage: 85 },
+    { name: "Docker / Terraform / CI/CD", percentage: 80 },
   ];
 
   const technologies = [
-    { icon: Code2, name: 'Node.js', color: '#68A063' },
-    { icon: Code2, name: 'NestJS', color: '#E0234E' },
-    { icon: Code2, name: 'TypeScript', color: '#3178C6' },
-    { icon: Code2, name: 'Langgraph', color: '#F05032' },
-    { icon: Database, name: 'PostgreSQL', color: '#336791' },
-    { icon: Database, name: 'MongoDB', color: '#47A248' },
-    { icon: Container, name: 'Docker', color: '#2496ED' },
-    { icon: Server, name: 'Express', color: '#000000' },
-    { icon: GitBranch, name: 'Git', color: '#F05032' },
-    { icon: Workflow, name: 'CI/CD', color: '#0066CC' },
+    { icon: Code2, name: "Node.js", color: "#68A063" },
+    { icon: Code2, name: "NestJS", color: "#E0234E" },
+    { icon: Code2, name: "TypeScript", color: "#3178C6" },
+    { icon: Code2, name: "Python", color: "#3776AB" },
+    { icon: Database, name: "PostgreSQL", color: "#336791" },
+    { icon: Database, name: "MongoDB", color: "#47A248" },
+    { icon: Container, name: "Docker", color: "#2496ED" },
+    { icon: Server, name: "LangChain", color: "#1C3C3C" },
+    { icon: GitBranch, name: "Git", color: "#F05032" },
+    { icon: Workflow, name: "CI/CD", color: "#0066CC" },
   ];
 
   return (
@@ -54,7 +55,7 @@ export function AboutSection() {
             className="text-4xl md:text-5xl font-bold text-foreground"
             style={{ scale }}
             whileHover={{ scale: 1.05 }}
-            transition={{ type: 'spring', stiffness: 300 }}
+            transition={{ type: "spring", stiffness: 300 }}
           >
             About Me
           </motion.h2>
@@ -72,9 +73,9 @@ export function AboutSection() {
               className="w-full max-w-md aspect-square bg-muted rounded-2xl flex items-center justify-center text-muted-foreground text-xl shadow-lg"
               whileHover={{
                 scale: 1.05,
-                boxShadow: '0 20px 40px rgba(0, 0, 0, 0.15)',
+                boxShadow: "0 20px 40px rgba(0, 0, 0, 0.15)",
               }}
-              transition={{ type: 'spring', stiffness: 300 }}
+              transition={{ type: "spring", stiffness: 300 }}
             >
               <motion.img
                 initial={{ opacity: 0 }}
@@ -95,29 +96,27 @@ export function AboutSection() {
             transition={{ duration: 0.8 }}
           >
             <h3 className="text-2xl md:text-3xl font-bold text-foreground">
-              Backend Developer with a Passion for Innovation
+              AI Systems Engineer & NLP Researcher
             </h3>
             <p className="text-lg leading-relaxed text-muted-foreground">
-              Hello there! I'm{' '}
+              Hello there! I&apos;m{" "}
               <span className="text-foreground font-semibold">
                 Abdullah Habberrih
               </span>
-              , a backend developer and software engineer with 3.5+ years of
-              professional experience building scalable APIs and distributed
-              systems using{' '}
-              <span className="text-foreground font-medium">Node.js</span>,{' '}
-              <span className="text-foreground font-medium">NestJS</span>, and{' '}
+              , a Master&apos;s student at University of Pisa (AI track) with 3+
+              years of experience. I specialize in building{" "}
               <span className="text-foreground font-medium">
-                modern JavaScript/TypeScript stacks
-              </span>
-              . Currently, I’m pursuing an MSc in Computer Science at the
-              University of Pisa (Italy) as a recipient of the Italian
-              Government MAECI Scholarship (2025–2026). Currently working at{' '}
-              <span className="text-foreground font-semibold">Lamah</span>,
-              where I develop API-driven backend systems. I’m passionate about
-              designing backend architectures, integrating AI agents (LangGraph)
-              into real-world applications, and contributing to open-source
-              software.
+                AI-powered systems
+              </span>{" "}
+              using LLMs and multi-agent orchestration,{" "}
+              <span className="text-foreground font-medium">
+                scalable backends
+              </span>{" "}
+              with NestJS and Node.js, and conducting{" "}
+              <span className="text-foreground font-medium">NLP research</span>{" "}
+              on Arabic dialect sentiment analysis. Currently working as an AI
+              Systems Engineer at{" "}
+              <span className="text-foreground font-semibold">Lamah</span>.
             </p>
 
             <div className="grid grid-cols-3 gap-4 pt-4">
@@ -131,7 +130,7 @@ export function AboutSection() {
                   transition={{ delay: 0.2 * index, duration: 0.5 }}
                   whileHover={{
                     y: -10,
-                    boxShadow: '0 10px 25px rgba(0, 0, 0, 0.1)',
+                    boxShadow: "0 10px 25px rgba(0, 0, 0, 0.1)",
                   }}
                 >
                   <motion.h3
@@ -140,7 +139,7 @@ export function AboutSection() {
                     whileInView={{ scale: 1 }}
                     viewport={{ once: true }}
                     transition={{
-                      type: 'spring',
+                      type: "spring",
                       stiffness: 200,
                       delay: 0.3 + 0.1 * index,
                     }}
@@ -176,7 +175,7 @@ export function AboutSection() {
             whileInView={{ y: 0, opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            whileHover={{ color: 'hsl(var(--primary))', x: 5 }}
+            whileHover={{ x: 5 }}
           >
             Technical Skills & Expertise
           </motion.h3>
@@ -200,7 +199,7 @@ export function AboutSection() {
                 whileInView={{ opacity: 1, y: 0, x: 0 }}
                 viewport={{ once: true }}
                 transition={{
-                  type: 'spring',
+                  type: "spring",
                   stiffness: 100,
                   delay: 0.1 * index,
                   duration: 0.6,
@@ -213,7 +212,7 @@ export function AboutSection() {
               >
                 <motion.h4
                   className="text-lg font-semibold mb-4 text-foreground"
-                  whileHover={{ color: 'hsl(var(--primary))' }}
+                  whileHover={{ color: "hsl(var(--primary))" }}
                 >
                   {skill.name}
                 </motion.h4>
@@ -243,7 +242,7 @@ export function AboutSection() {
             whileInView={{ y: 0, opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.3 }}
-            whileHover={{ color: 'hsl(var(--primary))', x: 5 }}
+            whileHover={{ x: 5 }}
           >
             Technologies & Tools
           </motion.h3>
@@ -259,7 +258,7 @@ export function AboutSection() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{
-                    type: 'spring',
+                    type: "spring",
                     stiffness: 100,
                     delay: 0.05 * index,
                     duration: 0.5,

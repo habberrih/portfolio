@@ -1,36 +1,36 @@
-'use client';
+"use client";
 
-import { motion } from 'framer-motion';
-import { Server, Cpu, Brain, Wrench } from 'lucide-react';
+import { motion } from "framer-motion";
+import { Server, Cpu, Brain, Wrench } from "lucide-react";
 
 const services = [
   {
     id: 1,
-    icon: Server,
-    title: 'Backend Development',
+    icon: Brain,
+    title: "AI Systems Development",
     description:
-      'Building robust APIs and server-side applications using NestJS, Node.js, Express, PostgreSQL, and MongoDB with Docker containerization.',
+      "Building AI-powered conversational systems using LLMs, multi-agent orchestration with LangGraph, and integrating voice interactions with speech-to-text and text-to-speech pipelines.",
   },
   {
     id: 2,
-    icon: Cpu,
-    title: 'IoT Development',
+    icon: Server,
+    title: "Backend Development",
     description:
-      'Developing IoT solutions with ESP8266 controllers, Arduino, and integration with platforms like Thingsboard. Creating OTA update libraries and sensor data management systems.',
+      "Designing scalable APIs and server-side applications using NestJS, Node.js, Express, PostgreSQL, MongoDB, and Prisma ORM with Docker containerization.",
   },
   {
     id: 3,
-    icon: Brain,
-    title: 'AI & NLP Research',
+    icon: Cpu,
+    title: "IoT Development",
     description:
-      'Conducting research in Natural Language Processing, particularly Sentiment Analysis of Arabic dialects using Machine Learning techniques like TF-IDF, N-grams, and stemming.',
+      "Developing IoT solutions with ESP8266 controllers, real-time sensor data collection, OTA update mechanisms, and integration with platforms like ThingsBoard.",
   },
   {
     id: 4,
     icon: Wrench,
-    title: 'DevOps & Infrastructure',
+    title: "DevOps & Infrastructure",
     description:
-      'Setting up CI/CD pipelines with Jenkins, infrastructure as code with Terraform, and cloud deployment on platforms like Hetzner.',
+      "Setting up CI/CD pipelines with Jenkins, infrastructure as code with Terraform, containerized deployments with Docker, and WhatsApp/Stripe API integrations.",
   },
 ];
 

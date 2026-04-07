@@ -1,11 +1,11 @@
-'use client';
+"use client";
 
-import type React from 'react';
+import type React from "react";
 
-import { useState } from 'react';
-import { motion } from 'framer-motion';
-import { MapPin, Phone, Mail } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { useState } from "react";
+import { motion } from "framer-motion";
+import { MapPin, Phone, Mail } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 type FormData = {
   name: string;
@@ -22,20 +22,20 @@ type FormStatus = {
 
 export function ContactSection() {
   const [formData, setFormData] = useState<FormData>({
-    name: '',
-    email: '',
-    subject: '',
-    message: '',
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
   });
 
   const [formStatus, setFormStatus] = useState<FormStatus>({
     submitted: false,
     success: false,
-    message: '',
+    message: "",
   });
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
     const { name, value } = e.target;
     setFormData((prevState) => ({
@@ -49,7 +49,7 @@ export function ContactSection() {
     setFormStatus({
       submitted: true,
       success: true,
-      message: 'Thank you for your message! I will get back to you soon.',
+      message: "Thank you for your message! I will get back to you soon.",
     });
 
     // Reset form after 3 seconds
@@ -57,33 +57,33 @@ export function ContactSection() {
       setFormStatus({
         submitted: false,
         success: false,
-        message: '',
+        message: "",
       });
     }, 3000);
 
     setFormData({
-      name: '',
-      email: '',
-      subject: '',
-      message: '',
+      name: "",
+      email: "",
+      subject: "",
+      message: "",
     });
   };
 
   const contactInfo = [
     {
       icon: MapPin,
-      title: 'Location',
-      value: 'Pisa, Italy',
+      title: "Location",
+      value: "Pisa, Italy",
     },
     {
       icon: Phone,
-      title: 'Phone',
-      value: '+39 331 447 0392',
+      title: "Phone",
+      value: "+39 331 447 0392",
     },
     {
       icon: Mail,
-      title: 'Email',
-      value: 'a.habberreh@gmail.com',
+      title: "Email",
+      value: "a.habberreh@gmail.com",
     },
   ];
 
