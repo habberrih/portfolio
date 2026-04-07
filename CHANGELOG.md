@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.0](https://github.com/habberrih/portfolio/compare/v1.2.2...v1.3.0) (2026-04-07)
+
+
+### Features
+
+* add GlobalError component for improved error handling and user feedback ([d4fc8f2](https://github.com/habberrih/portfolio/commit/d4fc8f23f12969a3c813e6857e99bbf9ec3ed720))
+
 ## [1.2.2](https://github.com/habberrih/portfolio/compare/v1.2.1...v1.2.2) (2025-11-01)
 
 
