@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import { useState, useEffect, useMemo } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { useState, useEffect, useMemo } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import {
   Code,
   Wrench,
@@ -11,10 +11,10 @@ import {
   ChevronLeft,
   ChevronRight,
   ExternalLink,
-} from 'lucide-react';
-import { GitHubIcon } from '@/components/icons/brand-icons';
+} from "lucide-react";
+import { GitHubIcon } from "@/components/icons/brand-icons";
 
-type Category = 'dev-tools' | 'automation' | 'nest' | 'node' | 'iot';
+type Category = "ai" | "nest" | "iot" | "automation";
 
 type Project = {
   id: number;
@@ -39,169 +39,200 @@ type ProjectsSectionProps = {
 const projects: Project[] = [
   {
     id: 1,
-    category: 'nest',
+    category: "ai",
     icon: Server,
-    title: 'Enterprise API Gateway',
+    title: "AI-Powered WhatsApp Assistant",
     description:
-      'A scalable API gateway built with NestJS for microservices architecture.',
-    technologies: ['NestJS', 'PostgreSQL', 'Redis', 'Docker'],
-    image: '/api-gateway-architecture.jpg',
+      "Production-grade conversational AI platform with multi-agent orchestration, payments, and voice support.",
+    technologies: [
+      "NestJS",
+      "LangGraph",
+      "PostgreSQL",
+      "Prisma",
+      "Stripe",
+      "WhatsApp API",
+    ],
+    image: "/api-gateway-architecture.jpg",
     images: [
-      '/api-gateway-dashboard.jpg',
-      '/microservices-diagram.jpg',
-      '/api-documentation-concept.png',
+      "/api-gateway-dashboard.jpg",
+      "/microservices-diagram.jpg",
+      "/api-documentation-concept.png",
     ],
     fullDescription:
-      'Developed a comprehensive API gateway solution using NestJS that handles authentication, rate limiting, and request routing for multiple microservices. The system processes over 10,000 requests per minute with 99.9% uptime.',
-    githubUrl: 'https://github.com/username/api-gateway',
+      "Built a production-oriented AI assistant backend for WhatsApp that combines NestJS, LangGraph-based multi-agent orchestration, PostgreSQL persistence, Stripe payments, and third-party service integrations. The system handles real user workflows including service discovery, ordering, checkout journeys, reminders, and voice interactions. My work covered the full backend architecture: NestJS module boundaries, LangGraph workflow routing, WhatsApp Cloud API integration, long-term memory with PostgreSQL and LangGraph checkpointing, Stripe webhook processing, speech-to-text/text-to-speech pipelines, and Bull-based background job processing.",
     features: [
-      'JWT-based authentication and authorization',
-      'Rate limiting and throttling',
-      'Request/response transformation',
-      'Service discovery and load balancing',
-      'Comprehensive logging and monitoring',
+      "Multi-agent LangGraph workflow with routing, intent classification, and domain-specific agents",
+      "Persistent memory and threaded conversations using PostgreSQL, Prisma, and LangGraph checkpointing",
+      "Production-grade WhatsApp integration with webhook intake, interactive messaging, and media handling",
+      "Stripe checkout creation and processor-based webhook architecture for payments",
+      "Voice note support with speech-to-text and text-to-speech pipelines",
+      "Third-party service workflows: availability lookup, ordering, follow-up, and provisioning",
+      "Input/output guardrails, abuse logging, token tracking, and queue-based async processing",
+      "Arabic and English support via nestjs-i18n with Swagger docs and Jest tests",
     ],
     impact:
-      'This API gateway improved system reliability and reduced response times by 40%, while providing a unified entry point for all client applications.',
+      "Demonstrates full backend architecture for AI products: from prototype to modular services, integrating LLM workflows with deterministic business systems, real channels like WhatsApp, and production concerns including deployment, observability, and technical documentation.",
   },
   {
     id: 2,
-    category: 'node',
+    category: "ai",
     icon: Code,
-    title: 'Real-time Chat Application',
+    title: "ML Project - Machine Learning Experiments",
     description:
-      'A scalable real-time chat platform built with Node.js and Socket.io.',
-    technologies: ['Node.js', 'Socket.io', 'MongoDB', 'Express'],
-    image: '/chat-application-interface.png',
-    images: ['/modern-chat-interface.png', '/user-dashboard.jpg'],
+      "Collection of machine learning models and experiments including classification, regression, and NLP tasks.",
+    technologies: ["Python", "Scikit-learn", "Pandas", "NumPy", "Jupyter"],
+    image: "/code-analysis-dashboard.png",
+    images: ["/code-metrics-dashboard.jpg", "/quality-reports.jpg"],
     fullDescription:
-      'Built a real-time chat application supporting multiple chat rooms, private messaging, file sharing, and user presence indicators. The application handles thousands of concurrent connections efficiently.',
+      "A comprehensive machine learning project repository containing various ML experiments and implementations. This project showcases practical applications of machine learning algorithms for classification, regression, and natural language processing tasks, demonstrating proficiency in data preprocessing, model training, evaluation, and optimization techniques.",
+    githubUrl: "https://github.com/habberrih/ml-project",
     features: [
-      'Real-time messaging with Socket.io',
-      'Multiple chat rooms and private messaging',
-      'File and image sharing',
-      'User presence and typing indicators',
-      'Message history and search',
+      "Data preprocessing and feature engineering pipelines",
+      "Classification and regression model implementations",
+      "Model evaluation and performance metrics analysis",
+      "Hyperparameter tuning and optimization",
+      "Jupyter notebooks with detailed explanations",
+      "Clean code structure following ML best practices",
     ],
     impact:
-      'The platform successfully handles 5,000+ concurrent users with minimal latency, providing a seamless communication experience.',
+      "Serves as a reference implementation for ML workflows and demonstrates practical machine learning skills applicable to real-world data science problems.",
   },
   {
     id: 3,
-    category: 'dev-tools',
-    icon: Wrench,
-    title: 'Code Quality Analyzer',
+    category: "nest",
+    icon: Server,
+    title: "Minara - Multi-tenant SaaS Starter",
     description:
-      'An automated tool for analyzing code quality and generating reports.',
-    technologies: ['Node.js', 'TypeScript', 'ESLint', 'SonarQube'],
-    image: '/code-analysis-dashboard.png',
-    images: [
-      '/code-metrics-dashboard.jpg',
-      '/quality-reports.jpg',
-      '/code-visualization.png',
-    ],
+      "Modular NestJS starter for multi-tenant SaaS with JWT auth, organization memberships, and tenant-scoped Prisma access.",
+    technologies: ["NestJS", "TypeScript", "Prisma", "PostgreSQL", "JWT"],
+    image: "/chat-application-interface.png",
+    images: ["/modern-chat-interface.png", "/user-dashboard.jpg"],
     fullDescription:
-      'Created a comprehensive code quality analyzer that integrates with CI/CD pipelines to automatically check code quality, detect code smells, and generate detailed reports with actionable insights.',
-    githubUrl: 'https://github.com/username/code-analyzer',
+      "Minara (meaning 'lighthouse' in Arabic) is a modular SaaS starter built with NestJS, Prisma, and PostgreSQL. It delivers authentication, organization management, tenant-aware data access, and admin features for building multi-tenant products quickly and safely. Features include JWT access/refresh tokens with rotation, organization CRUD with slug management, membership invitations and role management, AsyncLocalStorage-based tenant context, and Prisma middleware that auto-injects organizationId filters.",
+    githubUrl: "https://github.com/habberrih/minara",
+    liveUrl: "https://minara.onrender.com/docs",
     features: [
-      'Static code analysis',
-      'Code complexity metrics',
-      'Security vulnerability detection',
-      'Custom rule configuration',
-      'Integration with popular CI/CD tools',
+      "Email/password signup & login with JWT access and refresh tokens",
+      "Organization CRUD with slug management and soft delete",
+      "Membership invitations, acceptance, and role management (OWNER, ADMIN, MEMBER)",
+      "AsyncLocalStorage-based tenant context with Prisma middleware",
+      "Organization-scoped API keys with SHA-256 hashing",
+      "Swagger documentation, ESLint, Prettier, Husky, and commitlint",
     ],
     impact:
-      'Reduced code review time by 50% and improved overall code quality across multiple projects by providing automated feedback.',
+      "Open-source project with 1+ stars and 8 releases. Provides a production-ready foundation for building multi-tenant SaaS applications with proper authentication and tenant isolation.",
   },
   {
     id: 4,
-    category: 'automation',
-    icon: Cpu,
-    title: 'Deployment Automation Pipeline',
+    category: "nest",
+    icon: Server,
+    title: "Visitors System - Conference Badge Generator",
     description:
-      'Automated deployment pipeline for containerized applications.',
-    technologies: ['Docker', 'Kubernetes', 'Jenkins', 'Terraform'],
-    image: '/deployment-pipeline.jpg',
-    images: ['/ci-cd-pipeline.jpg', '/kubernetes-dashboard-ui.png'],
+      "Containerized visitor management system for the Horizons Conference with real-time Arabic badge generation.",
+    technologies: ["NestJS", "Flask", "Prisma", "Docker", "PostgreSQL"],
+    image: "/api-gateway-dashboard.jpg",
+    images: ["/api-gateway-architecture.jpg", "/microservices-diagram.jpg"],
     fullDescription:
-      'Designed and implemented a fully automated deployment pipeline that handles building, testing, and deploying containerized applications to Kubernetes clusters with zero downtime.',
+      "A two-service system for registering visitors and generating printable cards at the Misurata University Horizons Conference. The visitors-api (NestJS) stores visitor data and orchestrates card creation/download, while flask-api renders card images using templates with robust Arabic text shaping via arabic-reshaper and python-bidi. Features Swagger docs, bulk ZIP downloads, and full Docker Compose deployment with Nginx Proxy Manager.",
+    githubUrl: "https://github.com/habberrih/visitors-system",
     features: [
-      'Automated build and test processes',
-      'Container orchestration with Kubernetes',
-      'Infrastructure as Code with Terraform',
-      'Automated rollback on failures',
-      'Multi-environment deployment support',
+      "NestJS API for visitor registration and card orchestration",
+      "Flask service for Arabic text rendering with proper shaping and RTL support",
+      "Real-time badge generation with customizable templates (Researcher, Visitor, Organizer)",
+      "Bulk card download as ZIP files",
+      "Full Docker Compose deployment with PostgreSQL, pgAdmin, and Nginx Proxy Manager",
+      "Swagger documentation with Basic Auth protection",
     ],
     impact:
-      'Reduced deployment time from hours to minutes and eliminated deployment-related errors, enabling faster feature delivery.',
+      "Successfully deployed for the Horizons Conference at Misurata University, automating the registration workflow and eliminating manual badge creation errors during the event.",
   },
   {
     id: 5,
-    category: 'iot',
+    category: "iot",
     icon: Cpu,
-    title: 'Smart NICU Monitoring System',
+    title: "Air Quality Monitoring System",
     description:
-      'IoT-based monitoring system for neonatal intensive care units.',
-    technologies: ['Node.js', 'MQTT', 'InfluxDB', 'React'],
-    image: '/iot-monitoring-dashboard.jpg',
+      "IoT-based real-time air quality monitoring with ESP8266 controllers.",
+    technologies: ["ESP8266", "ThingsBoard", "NestJS", "Terraform", "Docker"],
+    image: "/iot-monitoring-dashboard.jpg",
     images: [
-      '/nicu-monitoring-interface.jpg',
-      '/sensor-data-visualization.jpg',
-      '/alert-system.png',
-      '/medical-iot-devices.jpg',
+      "/nicu-monitoring-interface.jpg",
+      "/sensor-data-visualization.jpg",
+      "/alert-system.png",
     ],
     fullDescription:
-      'Developed an IoT-based monitoring system for neonatal intensive care units that collects real-time data from multiple sensors, provides instant alerts for critical conditions, and visualizes patient vitals on a centralized dashboard.',
+      "Developed ESP8266-based controller systems for real-time sensor data collection. Built OTA update mechanisms and device onboarding workflows. Customized the ThingsBoard platform with additional features and deployed infrastructure using Terraform and containerized environments.",
     features: [
-      'Real-time sensor data collection',
-      'Automated alert system for critical conditions',
-      'Historical data analysis and visualization',
-      'Multi-patient monitoring dashboard',
-      'Integration with hospital information systems',
+      "ESP8266-based real-time sensor data collection",
+      "OTA (Over-The-Air) update mechanisms",
+      "ThingsBoard platform customization",
+      "Infrastructure deployment with Terraform",
+      "NestJS application for data extraction and reporting",
+      "Modified Wasp4G library for JSON requests",
     ],
     impact:
-      'Improved response time to critical situations by 60% and provided healthcare professionals with comprehensive patient monitoring capabilities.',
+      "Enabled real-time environmental monitoring with automated data collection, reporting, and scalable IoT infrastructure.",
   },
   {
     id: 6,
-    category: 'automation',
-    icon: Wrench,
-    title: 'Database Migration Tool',
+    category: "iot",
+    icon: Cpu,
+    title: "Smart NICU Monitoring System",
     description:
-      'Automated tool for managing database schema migrations across environments.',
-    technologies: ['Node.js', 'PostgreSQL', 'TypeScript'],
-    image: '/database-migration-tool.jpg',
-    images: ['/migration-dashboard.jpg', '/schema-visualization.jpg'],
+      "Award-winning IoT solution for neonatal intensive care units.",
+    technologies: ["IoT Sensors", "Real-time Monitoring", "Alert Systems"],
+    image: "/smart-nicu-project-demonstration.jpg",
+    images: ["/huawei-tech4good-competition.jpg", "/medical-iot-devices.jpg"],
     fullDescription:
-      'Built a robust database migration tool that automates schema changes across multiple environments, ensuring data integrity and providing rollback capabilities.',
-    githubUrl: 'https://github.com/username/db-migration-tool',
+      "Developed an IoT-based monitoring system for neonatal intensive care units that won Bronze Award at the Huawei Tech4Good Global Competition. The system collects real-time data from multiple sensors, provides instant alerts for critical conditions, and visualizes patient vitals on a centralized dashboard.",
     features: [
-      'Automated schema migration',
-      'Version control for database changes',
-      'Rollback capabilities',
-      'Multi-environment support',
-      'Migration history tracking',
+      "Real-time vital signs monitoring",
+      "Automated alert system for critical conditions",
+      "Multi-patient monitoring dashboard",
+      "Historical data analysis and visualization",
     ],
     impact:
-      'Eliminated manual database migration errors and reduced deployment risks, enabling confident database updates across all environments.',
+      "Won 3rd prize at Huawei Tech4Good Global Competition. Improved response time to critical situations and provided healthcare professionals with comprehensive patient monitoring capabilities.",
+  },
+  {
+    id: 7,
+    category: "automation",
+    icon: Wrench,
+    title: "Infrastructure Automation Pipeline",
+    description:
+      "Automated deployment infrastructure with Terraform and Jenkins.",
+    technologies: ["Terraform", "Jenkins", "Docker", "CI/CD"],
+    image: "/deployment-pipeline.jpg",
+    images: ["/ci-cd-pipeline.jpg", "/kubernetes-dashboard-ui.png"],
+    fullDescription:
+      "Designed and implemented automated deployment infrastructure using Terraform for infrastructure as code and Jenkins for CI/CD pipelines. Managed containerized deployments using Docker across multiple environments.",
+    features: [
+      "Infrastructure as Code with Terraform",
+      "CI/CD pipelines with Jenkins",
+      "Docker containerization",
+      "Multi-environment deployment support",
+      "Automated testing integration",
+    ],
+    impact:
+      "Reduced deployment time and eliminated manual deployment errors, enabling faster and more reliable feature delivery.",
   },
 ];
 
 export function ProjectsSection({ imagesMap }: ProjectsSectionProps) {
-  const [filter, setFilter] = useState<Category | 'all'>('all');
+  const [filter, setFilter] = useState<Category | "all">("all");
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   useEffect(() => {
     if (selectedProject) {
       setCurrentImageIndex(0);
-      document.body.style.overflow = 'hidden';
+      document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = 'auto';
+      document.body.style.overflow = "auto";
     }
 
     return () => {
-      document.body.style.overflow = 'auto';
+      document.body.style.overflow = "auto";
     };
   }, [selectedProject]);
 
@@ -216,7 +247,7 @@ export function ProjectsSection({ imagesMap }: ProjectsSectionProps) {
   }, [imagesMap]);
 
   const filteredProjects =
-    filter === 'all'
+    filter === "all"
       ? enhancedProjects
       : enhancedProjects.filter((item) => item.category === filter);
 
@@ -242,26 +273,25 @@ export function ProjectsSection({ imagesMap }: ProjectsSectionProps) {
         {/* Filter Buttons */}
         <div className="flex justify-center flex-wrap gap-2 mb-12">
           {[
-            { value: 'all', label: 'All Projects' },
-            { value: 'nest', label: 'NestJS' },
-            { value: 'node', label: 'Node.js' },
-            { value: 'dev-tools', label: 'Dev Tools' },
-            { value: 'automation', label: 'Automation' },
-            { value: 'iot', label: 'IoT' },
+            { value: "all", label: "All Projects" },
+            { value: "ai", label: "AI/LLM" },
+            { value: "nest", label: "NestJS" },
+            { value: "iot", label: "IoT" },
+            { value: "automation", label: "Automation" },
           ].map((item) => (
             <button
               key={item.value}
-              onClick={() => setFilter(item.value as Category | 'all')}
+              onClick={() => setFilter(item.value as Category | "all")}
               className={`relative px-5 py-2.5 text-base font-medium transition-colors ${
                 filter === item.value
-                  ? 'text-primary'
-                  : 'text-foreground/60 hover:text-primary'
+                  ? "text-primary"
+                  : "text-foreground/60 hover:text-primary"
               }`}
             >
               {item.label}
               <span
                 className={`absolute bottom-0 left-1/2 -translate-x-1/2 h-0.5 bg-primary transition-all duration-300 ${
-                  filter === item.value ? 'w-8' : 'w-0'
+                  filter === item.value ? "w-8" : "w-0"
                 }`}
               />
             </button>
@@ -284,7 +314,7 @@ export function ProjectsSection({ imagesMap }: ProjectsSectionProps) {
               >
                 <div className="relative h-64 overflow-hidden">
                   <img
-                    src={project.image || '/placeholder.svg'}
+                    src={project.image || "/placeholder.svg"}
                     alt={project.title}
                     className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
                   />
@@ -345,7 +375,7 @@ export function ProjectsSection({ imagesMap }: ProjectsSectionProps) {
                     <img
                       src={
                         selectedProject.images[currentImageIndex] ||
-                        '/placeholder.svg'
+                        "/placeholder.svg"
                       }
                       alt={selectedProject.title}
                       className="w-full h-full object-cover"
@@ -359,7 +389,7 @@ export function ProjectsSection({ imagesMap }: ProjectsSectionProps) {
                             setCurrentImageIndex((prev) =>
                               prev === 0
                                 ? selectedProject.images.length - 1
-                                : prev - 1
+                                : prev - 1,
                             );
                           }}
                           className="absolute left-5 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white/90 hover:bg-white flex items-center justify-center transition-all hover:scale-110 shadow-lg"
@@ -373,7 +403,7 @@ export function ProjectsSection({ imagesMap }: ProjectsSectionProps) {
                             setCurrentImageIndex((prev) =>
                               prev === selectedProject.images.length - 1
                                 ? 0
-                                : prev + 1
+                                : prev + 1,
                             );
                           }}
                           className="absolute right-5 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white/90 hover:bg-white flex items-center justify-center transition-all hover:scale-110 shadow-lg"
@@ -391,8 +421,8 @@ export function ProjectsSection({ imagesMap }: ProjectsSectionProps) {
                               }}
                               className={`w-3 h-3 rounded-full transition-all ${
                                 index === currentImageIndex
-                                  ? 'bg-white scale-110'
-                                  : 'bg-white/50'
+                                  ? "bg-white scale-110"
+                                  : "bg-white/50"
                               }`}
                             />
                           ))}
