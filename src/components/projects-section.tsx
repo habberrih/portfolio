@@ -216,6 +216,39 @@ const projects: Project[] = [
     impact:
       "Reduced deployment time and eliminated manual deployment errors, enabling faster and more reliable feature delivery.",
   },
+  {
+    id: 8,
+    category: "nest",
+    icon: Server,
+    title: "Lamah Gate API",
+    description:
+      "Card management and issuance system built for large-scale growth and third-party integration.",
+    technologies: [
+      "NestJS",
+      "TypeScript",
+      "Prisma",
+      "PostgreSQL",
+      "JWT",
+      "Swagger",
+      "Docker",
+    ],
+    image: "/lamah-gate-api-dashboard.jpg",
+    images: ["/lamah-gate-card-management.jpg", "/lamah-gate-architecture.jpg"],
+    fullDescription:
+      "Lamah Gate API is a card management and issuance system built to support large-scale growth and third-party integration. I contributed to the backend architecture and core business modules, helping shape a system designed to scale from around 250 users to 25,000+ users while maintaining security, data integrity, and maintainability. My work included architecting core backend modules, JWT authentication, role-based access control, and card lifecycle management with validation and anti-duplication logic.",
+    liveUrl: "https://lamah.com/lamah-gate/",
+    features: [
+      "JWT-based authentication with NestJS guards and custom decorators",
+      "Role-based access control with protected endpoints",
+      "Card lifecycle handling with status management and duplicate-prevention rules",
+      "Audit/history tracking for operational traceability",
+      "Standardized API responses with DTOs and validation pipes",
+      "Prisma schema design with migrations and type-safe database access",
+      "User, card, group, history, and statistics modules",
+    ],
+    impact:
+      "Contributed 100 commits with 12,110 lines added. Helped build a backend platform prepared for 100x user growth with strong API validation, security foundations, and modular architecture.",
+  },
 ];
 
 export function ProjectsSection({ imagesMap }: ProjectsSectionProps) {
