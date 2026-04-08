@@ -14,7 +14,7 @@ import {
 } from "lucide-react";
 import { GitHubIcon } from "@/components/icons/brand-icons";
 
-type Category = "ai" | "nest" | "iot" | "automation";
+type Category = "ai" | "nest" | "laravel" | "iot" | "automation";
 
 type Project = {
   id: number;
@@ -289,6 +289,44 @@ const projects: Project[] = [
     impact:
       "Demonstrates production-focused backend engineering in a real business domain, combining modular NestJS design, typed data modeling with Prisma, secure role-aware access control, localized validation, and API documentation in a system that goes well beyond tutorial CRUD.",
   },
+  {
+    id: 10,
+    category: "laravel",
+    icon: Wrench,
+    title: "Water Tank Contractor System",
+    description:
+      "Operations and finance platform for water and sewage contractors built with Laravel 12 and Filament 4.",
+    technologies: [
+      "Laravel 12",
+      "PHP",
+      "Filament 4",
+      "MySQL/PostgreSQL",
+      "Vite",
+      "Tailwind CSS",
+    ],
+    image: "/deployment-pipeline.jpg",
+    images: [
+      "/deployment-pipeline.jpg",
+      "/code-analysis-dashboard.png",
+      "/api-gateway-dashboard.jpg",
+    ],
+    fullDescription:
+      "Water Tank Contractor System is an operations and finance platform for water and sewage contractors, built with Laravel 12 and Filament 4. It unifies project execution, workforce management, catalog pricing, invoices, vendor bills, payments, payroll, expenses, daily movements, and the cashbook in one admin-driven system. The architecture emphasizes historical accuracy through price snapshots, auto-numbering, and soft deletes across financial and operational records, while Filament relation managers and automation hooks support practical workflows around project closure, payment allocation, payroll advances, vendor billing, and cashbook mirroring.",
+    features: [
+      "Unified coverage across customers, worker groups, catalogs, projects, invoices, vendor bills, payments, payroll, expenses, daily movements, and cashbook entries",
+      "Laravel 12 and Filament 4 admin panel at /admin with Operations, Finances, and Configurations navigation groups",
+      "Price snapshots, auto-numbering, and soft deletes on operational and financial line items for historical accuracy",
+      "Worker groups and memberships with enforcement for a single active worker membership",
+      "Project management with circuits, materials, services, geo fields, and optional auto-invoicing on completion",
+      "Customer invoices, vendor bills, payments, and payment allocations with status tracking and morph-based party assignments",
+      "Daily movement automation for petty cash, advances, reimbursements, payroll items, expenses, and cashbook mirroring",
+      "Payroll runs and items with period summaries, deductions, bonuses, and net pay tracking",
+      "Extensive documentation, factories, seed data, and roadmap planning for analytics, approvals, and attachments",
+      "Local developer workflow with composer scripts, queue listener, Vite, PHPUnit tests, and seeded demo credentials",
+    ],
+    impact:
+      "Shows full-stack business system design beyond simple CRUD by combining operational workflows, financial documents, admin tooling, automation rules, and reporting-oriented data architecture in a production-style Laravel application.",
+  },
 ];
 
 export function ProjectsSection({ imagesMap }: ProjectsSectionProps) {
@@ -346,12 +384,13 @@ export function ProjectsSection({ imagesMap }: ProjectsSectionProps) {
         {/* Filter Buttons */}
         <div className="flex justify-center flex-wrap gap-2 mb-12">
           {[
-            { value: "all", label: "All Projects" },
-            { value: "ai", label: "AI/LLM" },
-            { value: "nest", label: "NestJS" },
-            { value: "iot", label: "IoT" },
-            { value: "automation", label: "Automation" },
-          ].map((item) => (
+          { value: "all", label: "All Projects" },
+          { value: "ai", label: "AI/LLM" },
+          { value: "nest", label: "NestJS" },
+          { value: "laravel", label: "Laravel" },
+          { value: "iot", label: "IoT" },
+          { value: "automation", label: "Automation" },
+        ].map((item) => (
             <button
               key={item.value}
               onClick={() => setFilter(item.value as Category | "all")}
