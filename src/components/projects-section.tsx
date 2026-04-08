@@ -249,6 +249,46 @@ const projects: Project[] = [
     impact:
       "Contributed 100 commits with 12,110 lines added. Helped build a backend platform prepared for 100x user growth with strong API validation, security foundations, and modular architecture.",
   },
+  {
+    id: 9,
+    category: "nest",
+    icon: Server,
+    title: "School API",
+    description:
+      "Modular school management API built with NestJS, Prisma, and PostgreSQL for academic and administrative workflows.",
+    technologies: [
+      "NestJS",
+      "TypeScript",
+      "Prisma",
+      "PostgreSQL",
+      "JWT",
+      "CASL",
+      "Swagger",
+      "Docker",
+    ],
+    image: "/api-documentation-concept.png",
+    images: [
+      "/api-documentation-concept.png",
+      "/api-gateway-architecture.jpg",
+      "/code-analysis-dashboard.png",
+    ],
+    fullDescription:
+      "School API is a production-oriented backend for a school management platform built with NestJS, Prisma, and PostgreSQL. It centralizes academic and administrative workflows in a modular REST API serving dashboard and mobile-facing use cases for admins, teachers, and parents. The system covers authentication, role-aware authorization, academic structure management, student and parent records, attendance, grades, announcements, localized validation and messages, and Swagger-based API documentation for onboarding and testing.",
+    features: [
+      "JWT-based authentication with access and refresh token strategies",
+      "Role-based authorization using CASL",
+      "Modular NestJS architecture organized by domain boundaries",
+      "Academic structure management for years, semesters, classes, and class groups",
+      "Student, parent, teacher, and user management workflows",
+      "Course assignment and class-group course scheduling",
+      "Attendance tracking with status-based records and grade management across semesters",
+      "Announcements with approval status and receiver targeting",
+      "Arabic and English i18n resources for validation and API messages",
+      "Swagger docs, Prisma migrations, Dockerized local setup, and production middleware including Helmet and rate limiting",
+    ],
+    impact:
+      "Demonstrates production-focused backend engineering in a real business domain, combining modular NestJS design, typed data modeling with Prisma, secure role-aware access control, localized validation, and API documentation in a system that goes well beyond tutorial CRUD.",
+  },
 ];
 
 export function ProjectsSection({ imagesMap }: ProjectsSectionProps) {
