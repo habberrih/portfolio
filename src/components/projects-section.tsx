@@ -14,7 +14,7 @@ import {
 } from "lucide-react";
 import { GitHubIcon } from "@/components/icons/brand-icons";
 
-type Category = "ai" | "nest" | "laravel" | "iot" | "automation";
+type Category = "ai" | "express" | "nest" | "laravel" | "iot" | "automation";
 
 type Project = {
   id: number;
@@ -327,6 +327,33 @@ const projects: Project[] = [
     impact:
       "Shows full-stack business system design beyond simple CRUD by combining operational workflows, financial documents, admin tooling, automation rules, and reporting-oriented data architecture in a production-style Laravel application.",
   },
+  {
+    id: 11,
+    category: "express",
+    icon: Server,
+    title: "GatePass",
+    description:
+      "QR-based event access system built for the IT College graduation party at Misurata University in 2022.",
+    technologies: ["Node.js", "Express", "Prisma", "PostgreSQL", "JWT"],
+    image: "/api-gateway-dashboard.jpg",
+    images: [
+      "/api-gateway-dashboard.jpg",
+      "/code-analysis-dashboard.png",
+      "/modern-chat-interface.png",
+    ],
+    fullDescription:
+      "GatePass is one of the projects I keep in my portfolio because it marks an important point in my growth as a software engineer. I built it for the IT College graduation party at Misurata University in 2022 while leading the technical team at the IT Student Union. The system was created to manage graduates and guests, issue QR-based access, and verify attendance at the event entrance. From today's perspective, the implementation is simpler than how I would design the same system now, but it was my first real production project and the first time I had to think seriously about reliability, authentication, data flow, and software supporting people in a live operational setting.",
+    features: [
+      "Admin authentication using JWT",
+      "Graduate and guest record creation and management",
+      "Attendance-card count tracking for each guest",
+      "QR-based entry validation at the event entrance",
+      "Guest statistics for an event dashboard",
+      "Backend stack built with Node.js, Express, Prisma, and PostgreSQL",
+    ],
+    impact:
+      "Remains meaningful in the portfolio because it represents the shift from building projects for learning to delivering a real system used by real people at a live event. It also reflects the early stage of my engineering journey honestly, including the lessons that shaped how I approach structure, validation, and production responsibility today.",
+  },
 ];
 
 export function ProjectsSection({ imagesMap }: ProjectsSectionProps) {
@@ -384,13 +411,14 @@ export function ProjectsSection({ imagesMap }: ProjectsSectionProps) {
         {/* Filter Buttons */}
         <div className="flex justify-center flex-wrap gap-2 mb-12">
           {[
-          { value: "all", label: "All Projects" },
-          { value: "ai", label: "AI/LLM" },
-          { value: "nest", label: "NestJS" },
-          { value: "laravel", label: "Laravel" },
-          { value: "iot", label: "IoT" },
-          { value: "automation", label: "Automation" },
-        ].map((item) => (
+            { value: "all", label: "All Projects" },
+            { value: "ai", label: "AI/LLM" },
+            { value: "express", label: "Express.js" },
+            { value: "nest", label: "NestJS" },
+            { value: "laravel", label: "Laravel" },
+            { value: "iot", label: "IoT" },
+            { value: "automation", label: "Automation" },
+          ].map((item) => (
             <button
               key={item.value}
               onClick={() => setFilter(item.value as Category | "all")}
