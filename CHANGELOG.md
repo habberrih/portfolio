@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.5.0](https://github.com/habberrih/portfolio/compare/v1.4.0...v1.5.0) (2026-04-08)
+
+
+### Features
+
+* add Express.js category and new project details to ProjectsSection component ([fb69de6](https://github.com/habberrih/portfolio/commit/fb69de6e6135f4c40253be348519ea082a7385a3))
+* add Laravel category and new project details to ProjectsSection component ([a8c6ca1](https://github.com/habberrih/portfolio/commit/a8c6ca1410a87d7a68d12808c669b96a87605caf))
+
 ## [1.4.0](https://github.com/habberrih/portfolio/compare/v1.3.0...v1.4.0) (2026-04-08)
 
 
