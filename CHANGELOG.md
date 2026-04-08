@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.0](https://github.com/habberrih/portfolio/compare/v1.3.0...v1.4.0) (2026-04-08)
+
+
+### Features
+
+* add School API project details to ProjectsSection component ([3953a69](https://github.com/habberrih/portfolio/commit/3953a697c7ea5c0850c71b694f72bd2e6e8685ea))
+
 ## [1.3.0](https://github.com/habberrih/portfolio/compare/v1.2.2...v1.3.0) (2026-04-07)
 
 
